@@ -8,17 +8,27 @@
     <script src="js/login.js"></script>
 </head>
 <body background="img\bg.jpg">
-    <div class="container-login">
-        <div class="login">
+        <div id="login">
         <!-- da vedere se è un bell'effetto-->
         <h1>ClasseOnline</h1>
-        <div class="login_css">
-            <form name="form1">
+
+        <div id="login_css">
+
+            <h1 id="login_title">Login</h1>
+
+            <form name="form-login">
+
+                <select id="tipologiaUtenza">
+                    <option value="nonSelezionato">Non Selezionato</option>
+                    <option value="professore">Professore</option>
+                    <option value="studente">Studente</option>
+                </select>
+                
                 <input type="text" name="username" id="username" placeholder="Username" required="required" />
                 
                 <input type="text" name="password" id="password" placeholder="Password" required="required" />
                 
-                <input type="button" value="Log In" onclick="">
+                <input class="" type="button" value="Log In" onclick="verificaLogin()">
                 <!-- aggiungere checkbox "già registrato" -->
             </form>
 
@@ -28,7 +38,5 @@
         <script src="js/jquery-3.5.0.js" type="text/javascript" lang="javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
 
-    
-    </div>
     </body>
 </html>
