@@ -17,15 +17,15 @@
 
                 <form name="form-login">
 
-                    <select id="tipologiaUtenza">
+                    <select id="tipologiaUtenza" required>
                         <option value="nonSelezionato">Non Selezionato</option>
                         <option value="professore">Professore</option>
                         <option value="studente">Studente</option>
                     </select>
 
-                    <input type="text" name="username" id="username" placeholder="Username" required="required" />
+                    <input type="text" name="username" id="username" placeholder="Username" required/>
                     
-                    <input type="text" name="password" id="password" placeholder="Password" required="required" />
+                    <input type="text" name="password" id="password" placeholder="Password" required/>
                     
                     <input class="btn btn-large" type="button" value="Log In" onclick="verificaLogin()">
                     <!-- aggiungere checkbox "già registrato" -->
