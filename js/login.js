@@ -1,0 +1,3 @@
+function verificaLogin(){
+    return false;
+}
