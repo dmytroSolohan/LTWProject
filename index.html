@@ -15,21 +15,21 @@
 
                 <h1 id="login_title">Login</h1>
 
-                <form name="form-login">
+                <form name="form-login" action="#" method="POST">
 
                     <select id="tipologiaUtenza" required>
-                        <option value="nonSelezionato">Non Selezionato</option>
+                        <option value="" selected disabled hidden>Seleziona </option>
                         <option value="professore">Professore</option>
                         <option value="studente">Studente</option>
                     </select>
-
+                    
                     <input name="username" id="username" placeholder="Codice di accesso" required/>
                     
                     <input type="password" name="password" id="psw" placeholder="Password" required/>
                     
                     <input class="btn btn-large" type="submit" value="Log In" onclick="verificaLogin()">
 
-                    <input type="checkbox" onclick="showPSW()">Mostra Password 
+                    <input id="checkpsw"type="checkbox" onclick="showPSW()">Mostra Password 
 
                 </form>
 
