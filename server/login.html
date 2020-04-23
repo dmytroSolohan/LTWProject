@@ -4,34 +4,42 @@
         <meta charset='utf-8'>
         <title>ClasseOnline</title>
         <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-        <link href="../css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet">
         <link href="../css/style.css" type="text/css" rel="stylesheet">
         
     </head>
     <body background="../img/bg.jpg">
-        <div class="content">
-            <div class="left">
-                <div id="div1">
-                    <!--questi sono inventati, poi dobbiamo pensare a cosa mettere per davvero-->
-                    <p>Home</p>
-                    <p>Classi</p>
-                    <p>Aggiungi voto</p>
-                    <p>Modifica Voto</p>
-                </div>
+        <div id="wrapper">
+            <!-- barra menu sinistra -->
+            <div id="sidebar-wrapper">
+              <ul class="sidebar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
             </div>
             
-            <div class="right">
-                <div id="div2">
-                    <p>blablabla</p>
+            <!-- contenuto destra -->
+            <div id="page-content-wrapper">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <button type="button" id="sidebarCollapse" class="btn btn-large btn-primary">
+                      <span>Toggle Sidebar</span>
+                    </button>
+                    <h1 class="text-center">Titolo enorme</h1>
+                    <h2 class="small text-center">titolino</h2>
+                    <p class="text-center">TESTO A CASO</p>
+                  </div>
                 </div>
-        </div>
-
-        <footer class="footer-size">
-            <p>© 2020 - 2021</p>
-        </footer>
+              </div>
+            </div>
+          </div>
+            
         <!-- Link js-->
-        <script src="../js/login.js" type="text/javascript" lang="javascript"></script>
-        <script src="../js/jquery.js" type="text/javascript" lang="javascript"></script>
-        <script src="../js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
+        <script src="../js/jquery/jquery.min.js"></script>
+        <script src="../js/bootstrap/bootstrap.min.js"></script>
+        <script src="../js/login.js"></script>
+        <script src="../js/setups.js"></script>        
     </body>
 </html>

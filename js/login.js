@@ -1,7 +1,7 @@
 
 function verificaLogin(){
     return false;
-}
+};
 
 function showPSW() {
     var x = document.getElementById("psw");
@@ -10,5 +10,4 @@ function showPSW() {
     } else {
       x.type = "password";
     }
-  }
-  
+  };
