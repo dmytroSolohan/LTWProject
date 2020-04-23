@@ -18,3 +18,8 @@ Tutto questo con javascript oppure html5
   così da evitare di appesantirci il lavoro
   però ovviamente visto che non ho mai programmato in ajax, forse sarà più semplice
   per info e chiarimenti, scrivimi. 
+
+
+  ho implementato un nuovo tipo di menu a sinistra, da cambiarlo e vedere come sistemare nelle pagine
+  non mi sembra male, l'ho fatto a mò di form di login (trasparente)
+  vediamo cosa esce fuori
