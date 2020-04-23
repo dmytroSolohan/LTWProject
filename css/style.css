@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-
 #login_title{
     text-transform: uppercase;
 }
@@ -85,9 +84,35 @@ footer {
     width: 100%;
 }
 
-#footer-size {
+.footer-size {
     font-size: x-small;
+    text-align:center;
+    color: #fff; 
+
 }
 
 /* login */
+div {
+    height: 100%;
+}
+.content {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.left, .right {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    color: #fff;
+    text-align: center;
+}
 
+.left {
+    float: left;
+    width: 29%;
+}
+
+.right {
+    float: right;
+    width: 70%;
+}
