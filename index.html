@@ -4,39 +4,42 @@
         <meta charset='utf-8'>
         <title>ClasseOnline</title>
         <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-        <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="../css/bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/style.css" type="text/css" rel="stylesheet">
+        
     </head>
-    <body background="img/bg.jpg">
-        
-        <div id="login">
-                                
-            <h1>ClasseOnline</h1>
-        
-            <div id="login_css">
-                
-                <h1 id="login_title">Login</h1>
-
-                <form name="form-login" action="#" method="POST">
-
-                    <select id="tipologiaUtenza" required>
-                        <option value="" selected disabled hidden>Seleziona</option>
-                        <option value="professore">Professore</option>
-                        <option value="studente">Studente</option>
-                    </select>
-                    
-                    <input name="username" id="username" placeholder="Codice di accesso" required/>
-                        
-                    <input type="password" name="password" id="psw" placeholder="Password" required/>
-                        
-                    <input class="btn btn-large btn-primary" type="submit" value="Log In" onclick="verificaLogin()">
-                    <label>
-                        <input id="checkpsw" type="checkbox" onclick="showPSW()">Mostra Password 
-                    </label>
-                </form>
-
+    <body background="../img/bg.jpg">
+        <div id="wrapper">
+            <!-- barra menu sinistra -->
+            <div id="sidebar-wrapper">
+              <ul class="sidebar-nav">
+                <li><a href="index.html">Accedi</a></li>
+                <li><a href="registrati.html">Registrati</a></li>
+                <li><a href="about.html">About Project</a></li>
+              </ul>
             </div>
-        </div>
+            
+            <!-- contenuto destra -->
+            <div id="page-content-wrapper">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <button type="button" id="sidebarCollapse" class="btn btn-large btn-primary">
+                      <span>Menu</span>
+                    </button>
+                    <div class="content">
+                      <h1>Form login</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            
         <!-- Link js-->
+        <script src="../js/jquery/jquery.min.js"></script>
+        <script src="../js/bootstrap/bootstrap.min.js"></script>
         <script src="../js/login.js"></script>
+        <script src="../js/setups.js"></script>        
     </body>
 </html>
