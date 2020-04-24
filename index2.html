@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>ClasseOnline</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body background="img/bg.jpg">
+        
+        <div id="login">
+                                
+            <h1>ClasseOnline</h1>
+        
+            <div id="login_css">
+                
+                <h1 id="login_title">Login</h1>
+
+                <form name="form-login" action="#" method="POST">
+
+                    <select id="tipologiaUtenza" required>
+                        <option value="" selected disabled hidden>Seleziona</option>
+                        <option value="professore">Professore</option>
+                        <option value="studente">Studente</option>
+                    </select>
+                    
+                    <input name="username" id="username" placeholder="Codice di accesso" required/>
+                        
+                    <input type="password" name="password" id="psw" placeholder="Password" required/>
+                        
+                    <input class="btn btn-large btn-primary" type="submit" value="Log In" onclick="verificaLogin()">
+                    <label>
+                        <input id="checkpsw" type="checkbox" onclick="showPSW()">Mostra Password 
+                    </label>
+                </form>
+
+            </div>
+        </div>
+        <!-- Link js-->
+        <script src="../js/login.js"></script>
+    </body>
+</html>
