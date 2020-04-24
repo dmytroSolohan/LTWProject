@@ -140,4 +140,7 @@ label {
     background:rgba(0,0,0,0.4);;
   }
   
-  
+  .content {
+    text-align: center;
+    color: #fff; 
+  }
