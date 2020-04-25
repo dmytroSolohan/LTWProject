@@ -21,7 +21,6 @@
     outline: none;
   }
 
-
 * { 
     -moz-box-sizing:border-box; 
     -ms-box-sizing:border-box; 
@@ -29,9 +28,6 @@
     box-sizing:border-box; 
 }
 
-::after, ::before {
-  box-sizing: unset;
-}
 
 /*barra laterale*/
 #sidebar-wrapper{
