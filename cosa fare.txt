@@ -23,3 +23,7 @@ Tutto questo con javascript oppure html5
   ho implementato un nuovo tipo di menu a sinistra, da cambiarlo e vedere come sistemare nelle pagine
   non mi sembra male, l'ho fatto a mò di form di login (trasparente)
   vediamo cosa esce fuori
+  ho creato un login che implementa anche la registrazione
+  dimmi se ti piace, ho un po di idee, anche perchè la registrazione ha poca roba
+  che ovviamente verrà fatta quando uno logga
+  
