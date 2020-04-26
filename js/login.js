@@ -42,11 +42,12 @@
   
   /* da rivederla, ancora non conclusa*/
   function validateName(input){
-    if(input.trim().match(/^\[A-za-z0–9_]\s\[A-za-z0–9_]\$/) == null) {
+    if(input.trim().match(/^([a-zA-Z0-9_\-\.]+)\s([a-zA-Z0-9_\-\.]+)$/) == null) {
             return false;
     }
     return true;
     }
+    /* valida mail*/
     function validateMail(input){
         if(input.trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
                 return false;
