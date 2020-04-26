@@ -89,17 +89,17 @@ $(document).ready(function(){
         var psw = $('#psw-r').val();
         
         if(!validateName(nome)){
-            $('.invalid-mail-l').toggleClass('hide');
-            $('.email-l').toggleClass('margine');
+            $('.invalid-nome-r').toggleClass('hide');
+            $('.nome-l').toggleClass('margine');
         }
 
         if(!validateMail(mail)){
-            $('.invalid-mail-l').toggleClass('hide');
+            $('.invalid-mail-r').toggleClass('hide');
             $('.email-l').toggleClass('margine');
         }
             
         if(!validatePass(psw)){
-            $('.invalid-psw-l').toggleClass('hide');
+            $('.invalid-psw-r').toggleClass('hide');
             $('.password-l').toggleClass('margine');
         }
             
