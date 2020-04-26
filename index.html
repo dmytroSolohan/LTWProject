@@ -45,31 +45,36 @@
                         </div>
                     </div>
                 </div>
-                <!-- backbox -->
+                <!--^ DIETRO ^-->
 
                 <div class="davanti">
                     <div class="accedi">
                         <h2>Accedi</h2>
-                        <div class="inputbox">
-                            <input type="text" name="email" placeholder="Email" required>
-                            <input id="psw" type="password" name="password" placeholder="Password" required>
-                        </div>
-                        <p id="checkpsw">Mostra password</p>
-                        <button>Accedi</button>
+                        <form id="logga">
+                            <input id="mail-l" class="email-l margine" type="text" name="email" placeholder="Email" required autofocus>
+                            <label class="invalid-mail-l hide">Mail errata</label>
+                            <input id="psw-l" class="password-l margine" type="password" name="password" placeholder="Password" required>
+                            <label class="invalid-psw-l hide">Password errata</label>
+                            <p id="checkpsw">Mostra password</p>
+                            <button>Accedi</button>
+                        </form>
                     </div>
 
                     <div class="registrati hide">
                         <h2>Registrati</h2>
-                        <div class="inputbox">
-                            <input type="text" name="nome" placeholder="Nome Completo" required>
-                            <input type="text" name="email" placeholder="Email" required>
-                            <input type="password" name="password" placeholder="Password" required>
-                        </div>
-                        <button>Registrati</button>
+                        <form id="registra">
+                            <input class="margine" id="nome-r" type="text" name="nome" placeholder="Nome Completo" required>
+                            <label class="invalid-nome-r hide">Scrivi un nome completo</label>
+                            <input class="margine" id="email-r" type="text" name="email" placeholder="Email" required>
+                            <label class="invalid-mail-r hide">Email errata</label>
+                            <input class="margine" id="pasw-r" type="password" name="password" placeholder="Password" required>
+                            <label class="invalid-psw-r hide">Password troppo corta</label>
+                            <button type="submit" >Registrati</button>
+                        </form>
                     </div>
 
                 </div>
-                <!-- frontbox -->
+                <!--^ DAVANTI ^-->
             </div>
         </div>
     </div>
