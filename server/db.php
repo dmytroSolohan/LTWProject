@@ -1,7 +1,7 @@
 <?php
     
     $servername = "localhost";
-    $dbUsername = "root";
+    $dbUsername = "classeinlinea";
     $dbPassword = "";
     $dbName = "my_classeinlinea";
 

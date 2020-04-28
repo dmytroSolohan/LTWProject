@@ -102,7 +102,7 @@
             ajaxRequest.done(function(return_data){
                 if(return_data.status){
                     //sessionStorage.removeItem("mailLogin");
-                    //sessionStorage.setItem("userInformation", JSON.stringify(return_data));
+                    sessionStorage.setItem("userId", JSON.stringify(return_data));
                     console.log(return_data);
                     //$(location).attr('href',"./server/login.html");
                 }
@@ -156,18 +156,18 @@
             
         /*   qui codice per registrarsi */
           //prove
-          if(validateMail(mail) && validatePass(password)){
+          if(validateMail(email) && validatePass(passw)){
             var ajaxRequest = $.ajax({
                     type:'POST',
                     url:'./server/verifyregist.php',
                     dataType:'json',
-                    data:{mail:mail, password:password}
+                    data:{mail:email, password:passw}
             });
             
             ajaxRequest.done(function(return_data){
                 if(return_data.status){
                     //sessionStorage.removeItem("mailLogin");
-                    //sessionStorage.setItem("userInformation", JSON.stringify(return_data));
+                    sessionStorage.setItem("userId", JSON.stringify(return_data));
                     console.log(return_data);
                     //$(location).attr('href',"./server/login.html");
                 }

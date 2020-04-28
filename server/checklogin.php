@@ -1,11 +1,11 @@
 <?php
     
     //prove per vedere come funziona
-    $errors = array('email', 'ciccio'); //To store errors
+    $errors = array('db' => false, 'mail' => false, 'psw' => false); //To store errors
     $form_data = array(); //Pass back the data 
     
     /* Validate the form on the server side */
-    if(isset($_POST)){
+    if(isset($_POST['log-in'])){
             
         require 'db.php';
 
@@ -16,7 +16,8 @@
         $sql = "SELECT * FROM UTENTE WHERE email=?;";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare(stmt, $sql)){
-            //gestire l'errore 
+            $errors['db'] = true; //problma db
+            $form_data['posted'] = 'DB problem !';
         }
         else {
             mysqli_stmt_bind_param($stmt, "s", $mail);
@@ -28,28 +29,27 @@
 
                 if(!$pswCheck)
                 {
-                    //password errata
+                    $errors['psw'] = true; //password errata
+                    $form_data['posted'] = 'Password errata!';
                 }
                 else if($pswCheck)
                 {
-                    //creare una sessione per salvare l'eamil dell'utente
+                    $form_data['success'] = true;
+                    $form_data['posted'] = 'Successo';
+                    $form_data['userId'] = $result['ID'];
                 }
             }
             else {
-                //gestire errore
+                $errors['email'] = true;
+                $form_data['posted'] = 'Email non presente';
             }
         }
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
 
-        if (!empty($errors)) { //If errors in validation
+        if (!$errors['db'] || !$errors['email'] || !$errors['psw']) { //If errors in validation
             $form_data['success'] = false;
             $form_data['errors']  = $errors;
-        }
-
-        else { //If not, process the form, and return true on success
-            $form_data['success'] = true;
-            $form_data['posted'] = 'Data Was Posted Successfully';
         }
     
         echo json_encode($form_data);

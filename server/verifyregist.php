@@ -1,12 +1,12 @@
 <?php
     
     //prove per vedere come funziona
-    $errors = array('email', 'ciccio'); //To store errors
+    $errors = array('db' => false, 'mail' => false); //To store errors
     $form_data = array(); //Pass back the data 
     
     /* Validate the form on the server side */
-    if(isset($_POST)){
-            
+    if(isset($_POST['sign-up'])){
+        
         require 'db.php';
 
         $email = $_POST['email'];
@@ -17,6 +17,8 @@
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             //gestire l'errore di connessione sql error
+            $errors['db'] = true; //problma db
+            $form_data['posted'] = 'DB problem !';
         }
         else {
             mysqli_stmt_bind_param($stmt, "s", $mail);
@@ -25,6 +27,8 @@
             $result = mysqli_stmt_num_rows($stmt);
             if($riga > 0){
                 //utente esistente
+                $errors['email'] = true; //problma db
+                $form_data['posted'] = 'Email esistente !';
             }
             else {
                 $sql = "INSERT INTO UTENTE (email, password) VALUES(?, ?);";
@@ -32,6 +36,8 @@
 
                 if(!mysqli_stmt_prepare($stmt, $sql)){
                     //gesire di nuovo errore sql
+                    $errors['db'] = true; //problma db
+                    $form_data['posted'] = 'DB problem !';
                 }
                 else {
                     $hashpsw = password_hash($password, PASSWORD_DEFAULT);
@@ -46,14 +52,9 @@
         mysqli_close($conn);
 
 
-        if (!empty($errors)) { //If errors in validation
+        if (!$errors['db'] || !$errors['email']) { //If errors in validation
             $form_data['success'] = false;
             $form_data['errors']  = $errors;
-        }
-
-        else { //If not, process the form, and return true on success
-            $form_data['success'] = true;
-            $form_data['posted'] = 'Data Was Posted Successfully';
         }
     
         echo json_encode($form_data);
