@@ -94,23 +94,29 @@
         if(validateMail(mail) && validatePass(password)){
             var ajaxRequest =$.ajax({
                     type:'POST',
-                    url:'server/checklogin.php',
+                    url:'./server/checklogin.php',
                     dataType:'json',
-                    data:{mail:mail, password:password},
-                    success: function(data) {
-                        if (!data.success) { 
-                            if (data.errors.name) { 
-                                $('.throw_error').fadeIn(1000).html(data.errors.name); 
-                            }
-                        }
-                        else {
-                            //sessionStorage.setItem({mail:mail, id: '1111'}, JSON.stringify(data));
-                            $(location).attr('href',"server/login.html");
-                            }
-                        }
+                    data:{mail:mail, password:password}
+            });
+            
+            ajaxRequest.done(function(return_data){
+                if(return_data.status){
+                    //sessionStorage.removeItem("mailLogin");
+                    //sessionStorage.setItem("userInformation", JSON.stringify(return_data));
+                    console.log(return_data);
+                    //$(location).attr('href',"./server/login.html");
+                }
+                else{
+                    $('#mail-l').val("");
+                    $('#psw-l').val("");
+                }
             });
 
+            ajaxRequest.fail(function(return_data){
+                alert("Errore con il server, riprovare!");
+            });
         }
+
     });
 
 
@@ -149,6 +155,32 @@
         }
             
         /*   qui codice per registrarsi */
+          //prove
+          if(validateMail(mail) && validatePass(password)){
+            var ajaxRequest = $.ajax({
+                    type:'POST',
+                    url:'./server/verifyregist.php',
+                    dataType:'json',
+                    data:{mail:mail, password:password}
+            });
+            
+            ajaxRequest.done(function(return_data){
+                if(return_data.status){
+                    //sessionStorage.removeItem("mailLogin");
+                    //sessionStorage.setItem("userInformation", JSON.stringify(return_data));
+                    console.log(return_data);
+                    //$(location).attr('href',"./server/login.html");
+                }
+                else{
+                    $('#email-r').val("");
+                    $('#pasw-r').val("");
+                }
+            });
+
+            ajaxRequest.fail(function(return_data){
+                alert("Errore con il server, riprovare!");
+            });
+        }
 
     });
 
