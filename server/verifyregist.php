@@ -9,38 +9,42 @@
             
         require 'db.php';
 
-        $mail = $_POST['mail'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
-
+        
         //questa va poi modificata con il db appartenente
-        $sql = "SELECT * FROM UTENTE WHERE email=?;";
+        $sql = "SELECT email FROM UTENTE WHERE email=?;";
         $stmt = mysqli_stmt_init($conn);
-        if(!mysqli_stmt_prepare(stmt, $sql)){
-            //gestire l'errore 
+        if(!mysqli_stmt_prepare($stmt, $sql)){
+            //gestire l'errore di connessione sql error
         }
         else {
             mysqli_stmt_bind_param($stmt, "s", $mail);
             mysql_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
-            if($riga = mysqli_fetch_assoc($result)){
-
-                $pswCheck = password_verify($password, $row['psw']);
-
-                if(!$pswCheck)
-                {
-                    //password errata
-                }
-                else if($pswCheck)
-                {
-                    //creare una sessione per salvare l'eamil dell'utente
-                }
+            mysqli_stmt_store_result($stmt);
+            $result = mysqli_stmt_num_rows($stmt);
+            if($riga > 0){
+                //utente esistente
             }
             else {
-                //gestire errore
+                $sql = "INSERT INTO UTENTE (email, password) VALUES(?, ?);";
+                $stmt = mysqli_stmt_init($conn);
+
+                if(!mysqli_stmt_prepare($stmt, $sql)){
+                    //gesire di nuovo errore sql
+                }
+                else {
+                    $hashpsw = password_hash($password, PASSWORD_DEFAULT);
+
+                    mysqli_stmt_bind_param($stmt, "ss", $mail, $hashpsw);
+                    mysql_stmt_execute($stmt);
+
+                }
             }
         }
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
+
 
         if (!empty($errors)) { //If errors in validation
             $form_data['success'] = false;
