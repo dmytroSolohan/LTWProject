@@ -5,7 +5,7 @@
     $form_data = array(); //Pass back the data 
     
     /* Validate the form on the server side */
-    //if(isset($_POST['sign-up'])){
+    if(isset($_POST['yep'])){
         
         require 'db.php';
 
@@ -59,11 +59,11 @@
         }
     
         echo json_encode($form_data);
-    /*}
+    }
     
     else {
         header("Location: ../index.html");
         exit();
     }
-    */
+    
 ?>

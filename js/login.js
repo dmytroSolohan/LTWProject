@@ -96,15 +96,28 @@
                     type:'POST',
                     url:'./server/checklogin.php',
                     dataType:'json',
-                    data:{mail:mail, password:password}
+                    data:{mail:mail, password:password, yep:'ok'}
             });
             
+            /*
+                se success == false
+                error(
+                'db' => true/false, 
+                'mail' => true/false, 
+                'psw' => true/false)
+
+                se success == true
+                form_data
+                'success' => true,
+                'posted' => 'Stringa',
+                'userId' => 'ID';
+            */
             ajaxRequest.done(function(return_data){
-                if(return_data.status){
+                if(return_data.success){
                     //sessionStorage.removeItem("mailLogin");
                     sessionStorage.setItem("userId", JSON.stringify(return_data));
-                    console.log(return_data);
-                    //$(location).attr('href',"./server/login.html");
+                    //console.log(return_data);
+                    $(location).attr('href',"./server/login.html");
                 }
                 else{
                     $('#mail-l').val("");
@@ -161,7 +174,7 @@
                     type:'POST',
                     url:'./server/verifyregist.php',
                     dataType:'json',
-                    data:{mail:email, password:passw}
+                    data:{mail:email, password:passw, yep:'ok'}
             });
             
             ajaxRequest.done(function(return_data){
@@ -169,7 +182,7 @@
                     //sessionStorage.removeItem("mailLogin");
                     sessionStorage.setItem("userId", JSON.stringify(return_data));
                     console.log(return_data);
-                    //$(location).attr('href',"./server/login.html");
+                    $(location).attr('href',"./server/login.html");
                 }
                 else{
                     $('#email-r').val("");
