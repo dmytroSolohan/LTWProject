@@ -25,7 +25,7 @@
             $result = mysqli_stmt_get_result($stmt);
             if($riga = mysqli_fetch_assoc($result)){
 
-                $pswCheck = password_verify($password, $row['psw']);
+                $pswCheck = password_verify($password, $riga['psw']);
 
                 if(!$pswCheck)
                 {
@@ -36,7 +36,7 @@
                 {
                     $form_data['success'] = true;
                     $form_data['posted'] = 'Successo';
-                    $form_data['userId'] = $result['ID'];
+                    $form_data['userId'] = $riga['ID'];
                 }
             }
             else {
