@@ -9,8 +9,8 @@
         
         require 'db.php';
 
-        $email = $_POST['email'];
-        $password = $_POST['passw'];
+        $email = $_POST['mail'];
+        $password = $_POST['password'];
         
         //questa va poi modificata con il db appartenente
         $sql = "SELECT email FROM UTENTE WHERE email=?;";
@@ -52,7 +52,6 @@
         }
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
-
 
         if ($errors['db'] || $errors['mail']) { //If errors in validation
             $form_data['success'] = false;
