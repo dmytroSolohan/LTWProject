@@ -1,29 +1,3 @@
-Cerchiamo di mettere qui, cosa dovremmo fare col documento
 
-
-Tutto questo con javascript oppure html5
-1)bisogna verificare se è stato inserito il prof o l'alunno
-2)bisogna verificare se è stato inserito username
-3)bisogna verificare se è stato inserito password
-4)verificare se all'interno del database esiste quel tipo di username
-5)verificare se la password corrisponde al tipo di username
-
-6)una volta verificato tutto questo fare il login alla pagina richiesta, 
-  prof oppure alunno (che possono essere la stessa, per dinamicità)
-  siccome dovremmo cercare di utilizzare più tecnologie possibili
-  ho pensato che fosse il caso di utilizzare JQuery e AJAX con php nella richiesta di login
-  per far vedere al prof che sappiamo utilizzare la tecnologia
-  una volta che l'utente si è registrato possiamo utilizzare solo php e JQuery, 
-  per richieste di modifica al db,
-  così da evitare di appesantirci il lavoro
-  però ovviamente visto che non ho mai programmato in ajax, forse sarà più semplice
-  per info e chiarimenti, scrivimi. 
-
-
-  ho implementato un nuovo tipo di menu a sinistra, da cambiarlo e vedere come sistemare nelle pagine
-  non mi sembra male, l'ho fatto a mò di form di login (trasparente)
-  vediamo cosa esce fuori
-  ho creato un login che implementa anche la registrazione
-  dimmi se ti piace, ho un po di idee, anche perchè la registrazione ha poca roba
-  che ovviamente verrà fatta quando uno logga
-  
+  //let me know about your exam
+  //then call me, and let's finish the site :)
