@@ -115,7 +115,7 @@
             ajaxRequest.done(function(return_data){
                 if(return_data.success){
                     //sessionStorage.removeItem("mailLogin");
-                    sessionStorage.setItem("userId", JSON.stringify(return_data));
+                    sessionStorage.setItem("userId", JSON.stringify(return_data.userId));
                     //console.log(return_data);
                     $(location).attr('href',"./server/login.html");
                 }
@@ -180,8 +180,8 @@
             ajaxRequest.done(function(return_data){
                 if(return_data.status){
                     //sessionStorage.removeItem("mailLogin");
-                    sessionStorage.setItem("userId", JSON.stringify(return_data));
-                    console.log(return_data);
+                    sessionStorage.setItem("userId", JSON.stringify(return_data.userId));
+                    //console.log(return_data);
                     $(location).attr('href',"./server/login.html");
                 }
                 else{
