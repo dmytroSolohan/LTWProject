@@ -117,6 +117,10 @@
     transition: right .8s ease-in-out;
   }
   
+  .davanti h2 {
+    text-align: center;
+  }
+
   .moving{
     right:45%;
   }
