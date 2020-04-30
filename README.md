@@ -4,4 +4,5 @@ This project has been created by two students from Sapienza university, to "Ling
 
 ## Authors
 
-* **Solohan Dmytro & Vincenzo Colella** - *All work*
+* **Solohan Dmytro** - *All work*
+* **Vincenzo Colella** - *All work*
