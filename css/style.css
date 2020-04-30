@@ -199,6 +199,7 @@
     opacity: 0;
   }
   
+  /* integrabile jquery*/
   .hide {
     display: none;
   }
@@ -206,11 +207,12 @@
   form {
     padding-top: 10px;
   }
-
+  /* integrabile jquery*/
   .margine {
     margin-bottom: 20;
   }
 
+  /* integrabile in jquery*/
    form .invalid-mail-l,
    form .invalid-psw-l,
    form .invalid-nome-r,
@@ -219,3 +221,4 @@
     font-size: 80%;
     color: red;
   }
+  
