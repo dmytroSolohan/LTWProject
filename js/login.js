@@ -114,7 +114,7 @@
             */
             ajaxRequest.done(function(return_data){
                 if(return_data.success){
-                    //sessionStorage.removeItem("mailLogin");
+                    sessionStorage.removeItem("userId");
                     sessionStorage.setItem("userId", JSON.stringify(return_data.userId));
                     //console.log(return_data);
                     $(location).attr('href',"./server/login.html");
