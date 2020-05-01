@@ -18,12 +18,23 @@ $('#query').click(function(event){
             form_data
             'success' => true,
             'posted' => 'Stringa',
-            'data' => materia, nome_prof, aula, data, voto, descrizione.
+            'data' => array($materia, $prof, $aula, $data, $voto, $descrizione);
             
         */
         ajaxRequest.done(function(return_data){
             if(return_data.success){
-                console.log(return_data.data);
+                
+                var trHTML = '';
+                $.each(return_data.data, function (i, item) {
+                trHTML += '<tr><td>' + item.materia 
+                        + '</td><td>' + item.prof 
+                        + '</td><td>' + item.aula 
+                        + '</td><td>' + item.data 
+                        + '</td><td>' + item.voto 
+                        + '</td><td>' + item.descrizione + '</td></tr>';
+                });
+                $('#data').append(trHTML);
+
             }
             else{
                 alert("Errore con il database, riprovare!");

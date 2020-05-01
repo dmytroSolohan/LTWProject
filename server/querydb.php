@@ -25,18 +25,18 @@
             $form_data['posted'] = 'DB problem !';
         }
         else {
-
+            
             mysqli_stmt_bind_param($stmt, "i", $id);
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
-            while($riga = mysqli_stmt_fetch($result)){
+            while($riga = mysqli_fetch_assoc($result)){
 
-                push_array($materia, $riga['materia']);
-                push_array($prof, $riga['nome_prof']);
-                push_array($aula, $riga['aula']);
-                push_array($data, $riga['data']);
-                push_array($voto, $riga['voto']);
-                push_array($descrizione, $riga['descrizione']);
+                array_push($materia, $riga['materia']);
+                array_push($prof, $riga['nome_prof']);
+                array_push($aula, $riga['aula']);
+                array_push($data, $riga['data']);
+                array_push($voto, $riga['voto']);
+                array_push($descrizione, $riga['descrizione']);
 
             }
             
