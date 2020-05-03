@@ -83,7 +83,7 @@
     width: 600px;
     height: 350px;
     position: relative;
-    left: 46%;
+    left: 300px;
     transform: translate(-50%, 50%);
     display: inline-flex;
   }
@@ -221,4 +221,220 @@
     font-size: 80%;
     color: red;
   }
-  
+
+
+  @import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+
+.slides {
+    top:-30;
+    padding: 0;
+    width: 600px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    right:120;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 100;
+    opacity: 0;
+    width: 600px;
+    height: 420px;
+    display: block;
+    position: absolute;
+    left:300px;
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 130%;
+    height: 100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { left:300px;; top: 100;}
+.nav .prev { left:880px;; top: 100;}
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+  width: 100%;
+  bottom: 9px;
+  height: 11px;
+  display: block;
+  position: absolute;
+  text-align: center;
+  right:-400px;
+}
+
+.nav-dots .nav-dot {
+  top: 80px;
+  width: 11px;
+  height: 11px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.titolosito {
+  font-family:MV Boli, sans-serif;
+  text-align:center;
+  color: rgba(255, 255, 255);
+  font-size: 75px;
+  top: 50px;
+}
+.descrizione {
+  font-family:Gabriola;
+  text-align:center;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 25px;
+  top: 50px;
+
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+
+
+.container1 ul {
+  margin: 0;
+  margin-top: -360px;
+  list-style: none;
+  position: absolute;
+  padding: 1px 100px;
+  color: #fff;
+  font-size: 13px;
+}
+.container1 ul:before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  border-left: 2px dashed #fff;
+}
+.container1 ul li {
+  position: relative;
+  margin-left: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 14px;
+  border-radius: 6px;
+  width: 250px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.08);
+}
+.container1 ul li:not(:first-child) {
+  margin-top: 60px;
+}
+.container1 ul li > span {
+  width: 2px;
+  height: 100%;
+  background: #fff;
+  left: -30px;
+  top: 0;
+  position: absolute;
+}
+.container1 ul li > span:before, .container ul li > span:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: absolute;
+  background: #86b7e7;
+  left: -5px;
+  top: 0;
+}
+.container1 ul li span:after {
+  top: 100%;
+}
+.container1 ul li > div {
+  margin-left: 10px;
+}
+.container1 div .title, .container div .type {
+  font-weight: 600;
+  font-size: 12px;
+}
+.container1 div .info {
+  font-weight: 300;
+}
+.container1 div > div {
+  margin-top: 5px;
+}
+.container1 span.number {
+  height: 100%;
+}
+.container1 span.number span {
+  position: absolute;
+  font-size: 10px;
+  left: -35px;
+  font-weight: bold;
+}
+.container1 span.number span:first-child {
+  top: 0;
+}
+.container1 span.number span:last-child {
+  top: 100%;
+}
