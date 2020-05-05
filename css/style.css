@@ -83,7 +83,7 @@
     width: 600px;
     height: 350px;
     position: relative;
-    left: 300px;
+    left: 46%;
     transform: translate(-50%, 50%);
     display: inline-flex;
   }
@@ -413,7 +413,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 .container1 ul li > div {
   margin-left: 10px;
 }
-.container1 div .title, .container div .type {
+.container1 div .title, .container1 div .type {
   font-weight: 600;
   font-size: 12px;
 }
