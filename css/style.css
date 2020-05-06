@@ -438,3 +438,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 .container1 span.number span:last-child {
   top: 100%;
 }
+
+.table-striped{
+  color: white;
+}
