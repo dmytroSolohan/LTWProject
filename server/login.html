@@ -27,22 +27,43 @@
                     <span>Menu</span>
                 </button>
             </div>
-            <div class="container">
-                <button id="query">
-                    <span>Cerca</span>
-                </button>   
+            <div class="container jumbotron">
+                <div class="row justify-content-md-center">
+                    <div class="col-4">
+                      <div class="list-group" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action active" id="list-tutto-l" data-toggle="list" href="#list-tutto" role="tab" aria-controls="tutto">Tutto</a>
+                        <a class="list-group-item list-group-item-action" id="list-professori-l" data-toggle="list" href="#list-professori" role="tab" aria-controls="professori">Professori</a>
+                      </div>
+                    </div>
+                  </div>
             </div>
-            <div class="col-8" style="margin-left: auto;">
-                <table class="table" id="records_table">
-                    <tr>
-                        <th scope="col">Materia</th>
-                        <th scope="col">Professore</th>
-                        <th scope="col">Aula</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">Voto</th>
-                        <th scope="col">Descrizione</th>
-                    </tr>
-                </table>
+
+            <div class="container jumbotron">
+                <div class="row justify-content-md-center">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-tutto" role="tabpanel" aria-labelledby="list-tutto-l">
+                            <table class="table" id="records_tutto">
+                                <tr>
+                                    <th scope="col">Materia</th>
+                                    <th scope="col">Professore</th>
+                                    <th scope="col">Aula</th>
+                                    <th scope="col">Data</th>
+                                    <th scope="col">Voto</th>
+                                    <th scope="col">Descrizione</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="list-professori" role="tabpanel" aria-labelledby="list-professori-l">
+                            <table class="table" id="records_prof">
+                                <tr>
+                                    <th scope="col">Professore</th>
+                                    <th scope="col">Materia</th>
+                                    <th scope="col">Aula</th>
+                                </tr>
+                            </table>
+                        </div>
+                      </div>
+                </div>
             </div>
         </div>
     </div>

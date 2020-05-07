@@ -1,5 +1,5 @@
 
-$('#query').click(function(event){
+$('#list-tutto-l').click(function(event){
     event.preventDefault();
     
     var ajaxRequest =$.ajax({
@@ -33,7 +33,7 @@ $('#query').click(function(event){
                     + '</td><td>' + item[4]
                     + '</td><td>' + item[5] + '</td></tr>';
             });
-            $('#records_table').append(trHTML);
+            $('#records_tutto').append(trHTML);
 
             }
             else{
