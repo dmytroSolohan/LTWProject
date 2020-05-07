@@ -10,7 +10,7 @@
             
         require 'db.php';
 
-        $id = $_POST['ID'];
+        $id = $_POST['id'];
         
         //questa va poi modificata con il db appartenente
         $sql = "SELECT * FROM NOTE WHERE FK_stud = ? ORDER BY data;";
@@ -25,6 +25,7 @@
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
             while($riga = mysqli_fetch_assoc($result)){
+
                 $row = array();
                 array_push($row, $riga['materia']);
                 array_push($row, $riga['nome_prof']);
