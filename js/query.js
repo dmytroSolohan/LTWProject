@@ -1,5 +1,5 @@
 
-$('#query').click(function(event){
+$('#list-tutto-l').click(function(event){
     event.preventDefault();
     
     var ajaxRequest =$.ajax({
@@ -18,12 +18,23 @@ $('#query').click(function(event){
             form_data
             'success' => true,
             'posted' => 'Stringa',
-            'data' => materia, nome_prof, aula, data, voto, descrizione.
+            'data' => array($materia, $prof, $aula, $data, $voto, $descrizione);
             
         */
         ajaxRequest.done(function(return_data){
             if(return_data.success){
-                console.log(return_data.data);
+                
+                var trHTML = '';
+                $.each(return_data.data, function (i, item) {
+                trHTML += '<tr><td>' + item[0]
+                    + '</td><td>' + item[1]
+                    + '</td><td>' + item[2]
+                    + '</td><td>' + item[3]
+                    + '</td><td>' + item[4]
+                    + '</td><td>' + item[5] + '</td></tr>';
+            });
+            $('#records_tutto').append(trHTML);
+
             }
             else{
                 alert("Errore con il database, riprovare!");
