@@ -1,37 +1,5 @@
 
-/**spostamento davanti col dietro*/
- $(document).ready(function(){
-  
-    var $accMsg = $('.acc-Msg'),
-    $accedi = $('.accedi'),
-    $regMsg = $('.reg-Msg'),
-    $registrati = $('.registrati'),
-    $davanti = $('.davanti');
-  
-  $('#puls-sin').on('click', function() {
-    $accMsg.toggleClass("visibility");
-    $davanti.addClass("moving");
-    $regMsg.toggleClass("visibility");
-  
-    $('#puls-sin').attr("disabled", true);
-    $('#puls-des').attr("disabled", false);
-  
-    $registrati.toggleClass('hide');
-    $accedi.toggleClass('hide');
-  });
-  
-  $('#puls-des').on('click', function() {
-    $accMsg.toggleClass("visibility");
-    $davanti.removeClass("moving");
-    $regMsg.toggleClass("visibility");
-  
-    $('#puls-des').attr("disabled", true);
-    $('#puls-sin').attr("disabled", false);
-  
-    $registrati.toggleClass('hide');
-    $accedi.toggleClass('hide');
-  });
-
+$(document).ready(function(){
   
     /* psw lettura nel campo password da hover *O*  */
     $('#checkpsw').hover(function () {

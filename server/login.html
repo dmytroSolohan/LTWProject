@@ -14,9 +14,9 @@
         <!-- barra menu sinistra -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li><a href="#">Classi</a></li>
-                <li><a href="#">Materie</a></li>
+                <li><a href="#">Homepage</a></li>
                 <li><a href="#">About</a></li>
+                <li><a href="#">Exit</a></li>
             </ul>
         </div>
 
@@ -27,22 +27,44 @@
                     <span>Menu</span>
                 </button>
             </div>
-            <div class="container">
-                <button id="query">
-                    <span>Cerca</span>
-                    <div id="data">
-                        <table id="records_table" border='1'>
-                            <tr>
-                                <th>Materia</th>
-                                <th>Professore</th>
-                                <th>Aula</th>
-                                <th>Data</th>
-                                <th>Voto</th>
-                                <th>Descrizione</th>
-                            </tr>
-                        </table>
+            <div class="container jumbotron shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="row justify-content-md-center">
+                    <div class="col-4">
+                        <!-- sto ancora cercando qualche colore figo-->
+                      <div class="list-group" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action list-group-item-dark active" id="list-tutto-l" data-toggle="list" href="#list-tutto" role="tab" aria-controls="tutto">Tutto</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark" id="list-professori-l" data-toggle="list" href="#list-professori" role="tab" aria-controls="professori">Professori</a>
+                      </div>
                     </div>
-                </button>              
+                  </div>
+            </div>
+
+            <div class="container jumbotron">
+                <div class="row justify-content-md-center">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-tutto" role="tabpanel" aria-labelledby="list-tutto-l">
+                            <table class="table" id="records_tutto">
+                                <tr>
+                                    <th scope="col">Materia</th>
+                                    <th scope="col">Professore</th>
+                                    <th scope="col">Aula</th>
+                                    <th scope="col">Data</th>
+                                    <th scope="col">Voto</th>
+                                    <th scope="col">Descrizione</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="list-professori" role="tabpanel" aria-labelledby="list-professori-l">
+                            <table class="table" id="records_prof">
+                                <tr>
+                                    <th scope="col">Professore</th>
+                                    <th scope="col">Materia</th>
+                                    <th scope="col">Aula</th>
+                                </tr>
+                            </table>
+                        </div>
+                      </div>
+                </div>
             </div>
         </div>
     </div>
