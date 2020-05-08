@@ -8,7 +8,6 @@ $(document).ready(function(){
       $('#psw-l').attr('type', 'password');
   });
   
-  /* da rivederla, ancora non conclusa*/
   function validateName(input){
     if(input.trim().match(/^([a-zA-Z0-9_\-\.]+)\s([a-zA-Z0-9_\-\.]+)$/) == null) {
             return false;

@@ -7,8 +7,8 @@ $(document).ready(function(){
     });
   });
 
+  
   /**spostamento davanti col dietro*/
-   
   var $accMsg = $('.acc-Msg'),
   $accedi = $('.accedi'),
   $regMsg = $('.reg-Msg'),
