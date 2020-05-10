@@ -93,7 +93,7 @@ $(document).ready(function(){
             });
 
             ajaxRequest.fail(function(return_data){
-                alert("Errore con il server, riprovare!");
+                alert(return_data.posted);
             });
         }
 
