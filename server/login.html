@@ -14,9 +14,10 @@
         <!-- barra menu sinistra -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li><a href="#">Homepage</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Exit</a></li>
+                <li id="home">Homepage</li>
+                <li id="data">Dati</li>
+                <li id="grades">Voti</li>
+                <li id="exit">Esci</li>
             </ul>
         </div>
 
@@ -27,45 +28,128 @@
                     <span>Menu</span>
                 </button>
             </div>
-            <div class="container jumbotron shadow-lg p-3 mb-5 bg-white rounded">
-                <div class="row justify-content-md-center">
-                    <div class="col-4">
-                        <!-- sto ancora cercando qualche colore figo-->
-                      <div class="list-group" id="list-tab" role="tablist">
-                        <a class="list-group-item list-group-item-action list-group-item-dark active" id="list-tutto-l" data-toggle="list" href="#list-tutto" role="tab" aria-controls="tutto">Tutto</a>
-                        <a class="list-group-item list-group-item-action list-group-item-dark" id="list-professori-l" data-toggle="list" href="#list-professori" role="tab" aria-controls="professori">Professori</a>
-                      </div>
-                    </div>
-                  </div>
-            </div>
 
-            <div class="container jumbotron">
-                <div class="row justify-content-md-center">
-                    <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="list-tutto" role="tabpanel" aria-labelledby="list-tutto-l">
-                            <table class="table" id="records_tutto">
-                                <tr>
-                                    <th scope="col">Materia</th>
-                                    <th scope="col">Professore</th>
-                                    <th scope="col">Aula</th>
-                                    <th scope="col">Data</th>
-                                    <th scope="col">Voto</th>
-                                    <th scope="col">Descrizione</th>
-                                </tr>
-                            </table>
+            <div id="homepage" class="container jumbotron">
+                <div class="container jumbotron shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="row justify-content-md-center">
+                        <div class="col-3">
+                            <h1>Benvenuto</h1>
                         </div>
-                        <div class="tab-pane fade" id="list-professori" role="tabpanel" aria-labelledby="list-professori-l">
-                            <table class="table" id="records_prof">
-                                <tr>
-                                    <th scope="col">Professore</th>
-                                    <th scope="col">Materia</th>
-                                    <th scope="col">Aula</th>
-                                </tr>
-                            </table>
-                        </div>
-                      </div>
+                    </div>
                 </div>
             </div>
+
+            <div id="dati" class="container jumbotron hide">
+                <h1>Ciao</h1>
+                <div class="container jumbotron shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="row justify-content-md-center">
+                        <div class="col-3">
+                            <!-- sto ancora cercando qualche colore figo-->
+                            <div class="list-group" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action active" id="list-dati-l" data-toggle="list" href="#list-dati" role="tab" aria-controls="dati">Visualizza i tuoi dati</a>
+                            <a class="list-group-item list-group-item-action" id="list-modif-l" data-toggle="list" href="#list-modif" role="tab" aria-controls="modifica">Modifica i tuoi dati</a>
+                            <a class="list-group-item list-group-item-action" id="list-resto-l" data-toggle="list" href="#list-resto" role="tab" aria-controls="resto">Modifica i voti, materie ...</a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="container jumbotron shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="row justify-content-md-center">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="list-dati" role="tabpanel" aria-labelledby="list-dati-l">
+                                <table class="table" id="records_dati">
+                                    <tr>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Cognome</th>
+                                        <th scope="col">Data di nascita</th>
+                                        <th scope="col">Indirizzo</th>
+                                        <th scope="col">Citta'</th>
+                                        <th scope="col">Paese</th>
+                                        <th scope="col">Telefono</th>
+                                        <th scope="col">E-mail</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="list-modif" role="tabpanel" aria-labelledby="list-modif-l">
+                                Qui ci andra' il form di registrazione dei dati personali
+                                <form action="">
+                                    
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="list-resto" role="tabpanel" aria-labelledby="list-resto-l">
+                                Qui ci andra' il form di registrazione dei dati dei voti, materie ecc...
+                                <form action="">
+                                    
+                                </form>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="voti" class="container jumbotron hide">
+                <div class="container jumbotron shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="row justify-content-md-center">
+                        <div class="col-3">
+                            <!-- sto ancora cercando qualche colore figo-->
+                            <div class="list-group" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action active" id="list-tutto-l" data-toggle="list" href="#list-tutto" role="tab" aria-controls="tutto">Tutto</a>
+                            <a class="list-group-item list-group-item-action" id="list-professori-l" data-toggle="list" href="#list-professori" role="tab" aria-controls="professori">Professori</a>
+                            <a class="list-group-item list-group-item-action" id="list-voti-l" data-toggle="list" href="#list-voti" role="tab" aria-controls="voti">Voti</a>
+                            <a class="list-group-item list-group-item-action" id="list-materia-l" data-toggle="list" href="#list-materia" role="tab" aria-controls="materie">Materie</a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="container jumbotron shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="row justify-content-md-center">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="list-tutto" role="tabpanel" aria-labelledby="list-tutto-l">
+                                <table class="table" id="records_tutto">
+                                    <tr>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Professore</th>
+                                        <th scope="col">Aula</th>
+                                        <th scope="col">Data</th>
+                                        <th scope="col">Voto</th>
+                                        <th scope="col">Descrizione</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="list-professori" role="tabpanel" aria-labelledby="list-professori-l">
+                                <table class="table" id="records_prof">
+                                    <tr>
+                                        <th scope="col">Professore</th>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Aula</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="list-materia" role="tabpanel" aria-labelledby="list-materia-l">
+                                <table class="table" id="records_materia">
+                                    <tr>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Voto</th>
+                                    </tr>
+                                </table>
+                            </div>
+                          <div class="tab-pane fade" id="list-voti" role="tabpanel" aria-labelledby="list-voti-l">
+                            <table class="table" id="records_voti">
+                                <tr>
+                                    <th scope="col">Materia</th>
+                                    <th scope="col">Voto</th>
+                                </tr>
+                            </table>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            
+
         </div>
     </div>
     <!-- Link js-->
