@@ -1,7 +1,11 @@
   body, html{
     font-family: 'Roboto', sans-serif;
   }
-  
+
+  .hide {
+    display: none;
+  }
+
   button {
       background-color: rgba(0,0,0,0.2);
       border: 2px solid white;
@@ -64,17 +68,17 @@
     width:100%;
     transition:all .3s;
     padding:10px;
-  }
-  
-  .sidebar-nav li a {
     display:block;
     text-decoration:none;
     color:#ddd;
   }
-  
+    
   .sidebar-nav li:hover{
     background:rgba(0,0,0,0.2);
+    cursor: pointer;
   }
+
+
  
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 
