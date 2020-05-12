@@ -50,7 +50,10 @@
                         array_push($row, $riga['nome_prof']);
                         array_push($row, $riga['aula']);
                         array_push($row, $riga['data']);
-                        array_push($row, $riga['voto']);
+                        if($riga['voto'] == null)
+                            array_push($row, "Nessun voto");
+                        else
+                            array_push($row, $riga['voto']);
                         array_push($row, $riga['descrizione']);
     
                         array_push($data, $row);
@@ -69,23 +72,16 @@
                     }
                     break;
                     case '2':
-                        while($riga = mysqli_fetch_assoc($result))
-                    {
-                        $row = array();
-
-                        array_push($row, $riga['materia']);
-                        array_push($row, $riga['voto']);
-    
-                        array_push($data, $row);    
-                    }
-                    break;
                     case '3':
                         while($riga = mysqli_fetch_assoc($result))
                     {
                         $row = array();
 
                         array_push($row, $riga['materia']);
-                        array_push($row, $riga['voto']);
+                        if($riga['voto'] == null)
+                            array_push($row, "Nessun voto");
+                        else
+                            array_push($row, $riga['voto']);
     
                         array_push($data, $row);    
                     }
