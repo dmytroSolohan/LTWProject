@@ -24,10 +24,14 @@
     outline: none;
   }
 
+  #sidebarCollapse{
+    align-content: left;
+  }
+
 /*barra laterale*/
 #sidebar-wrapper{
     z-index: 1;
-    position: absolute;
+    position: fixed;
     width:0;
     height:100%;
     overflow-y:hidden;
@@ -37,6 +41,10 @@
     display:flex;
     align-items:center;
   }
+
+  #sidebarCollapse {
+    position: fixed;
+  }
   
   /* resto */
   #page-content-wrapper{
@@ -45,7 +53,7 @@
     height: 100%;
     transition:all .5s;
   }
-    
+  
   #wrapper.menuDisplayed #sidebar-wrapper{
     width:240px;
   }
@@ -84,6 +92,9 @@
     cursor: pointer;
   }
 
+  #list-tab a{
+    text-align: center;
+  }
 
  
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);

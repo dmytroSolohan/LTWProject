@@ -9,7 +9,7 @@ $(document).ready(function(){
   });
   
   function validateName(input){
-    if(input.trim().match(/^([a-zA-Z0-9_\-\.]+)$/) == null || input.trim().length <= 5) {
+    if(input.trim().match(/^([a-zA-Z0-9_\-\.\s]+)$/) == null || input.trim().length <= 5) {
             return false;
     }
 
@@ -32,7 +32,7 @@ $(document).ready(function(){
     }
 
     /* */
-    $('#logga').submit(function(event){
+    $(document).on("submit" , "#logga", function(event){
         event.preventDefault();
 
         var mail = $('#mail-l').val();
@@ -63,7 +63,7 @@ $(document).ready(function(){
                     type:'POST',
                     url:'./server/checklogin.php',
                     dataType:'json',
-                    data:{mail:mail, password:password, yep:'ok'}
+                    data:{mail:mail, password:password}
             });
             
             /*
@@ -99,7 +99,7 @@ $(document).ready(function(){
     });
 
 
-    $('#registra').submit(function(event){
+    $(document).on("submit" , "#registra", function(event){
         event.preventDefault();
 
         var username = $('#username-r').val();
@@ -140,14 +140,13 @@ $(document).ready(function(){
                     type:'POST',
                     url:'./server/verifyregist.php',
                     dataType:'json',
-                    data:{mail:email, password:passw, yep:'ok'}
+                    data:{username: username, mail:email, password:passw}
             });
             
             ajaxRequest.done(function(return_data){
                 if(return_data.status){
                     sessionStorage.removeItem("userId");
-                    sessionStorage.setItem("userId", JSON.stringify(return_data.userId));
-                    $(location).attr('href',"./server/login.html");
+                    alert("Utente registrato con successo!");
                 }
                 else{
                     $('#username-r').val("");

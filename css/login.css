@@ -1,10 +1,10 @@
 
-  .container{
+  .contenitore{
     /*border:1px solid white;*/
     width: 600px;
     height: 350px;
     position: relative;
-    left: 46%;
+    left: 50%;
     transform: translate(-50%, 50%);
     display: inline-flex;
   }
@@ -18,11 +18,11 @@
     top:50%;
     display: inline-flex;
     
-    /* dimmi se ti piacciono, a me facevano effetto
+    /* dimmi se ti piacciono, a me facevano effetto */
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
     border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;*/
+    border-bottom-left-radius: 50px;
   }
   
   .davanti{
@@ -51,7 +51,6 @@
     height: 100%;
     font-size: 15px;
     box-sizing: border-box;
-    
   }
   
   .acc-Msg .title,
@@ -71,6 +70,10 @@
     margin-left: 12%;
   }
   
+  .visibility{
+    opacity: 0;
+  }
+
   .acc-Msg button,
   .reg-Msg button {
     margin-top: 20px;
@@ -115,19 +118,12 @@
     /*opacity: 1;*/
     transition: opacity .8s ease-in-out;
   }
-  
-  .visibility{
-    opacity: 0;
-  }
-  
+    
   /* integrabile jquery*/
   .hide {
     display: none;
   }
 
-  form {
-    padding-top: 10px;
-  }
   /* integrabile jquery*/
   .margine {
     margin-bottom: 20;
@@ -143,3 +139,6 @@
     color: red;
   }
   
+  form {
+    padding-top: 10px;
+  }
