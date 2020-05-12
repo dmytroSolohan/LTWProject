@@ -10,7 +10,7 @@
         require 'db.php';
 
         $mail = $_POST['mail'];
-        $password = $_POST['password'];
+        $password = $_POST['password'];        
 
         //questa va poi modificata con il db appartenente
         $sql = "SELECT * FROM UTENTE WHERE email=?;";
@@ -40,18 +40,18 @@
                 }
             }
             else {
-                $errors['email'] = true;
+                $errors['mail'] = true;
                 $form_data['posted'] = 'Email non presente';
             }
         }
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
 
-        if ($errors['db'] || $errors['email'] || $errors['psw']) { //If errors in validation
+        if ($errors['db'] || $errors['mail'] || $errors['psw']) { //If errors in validation
             $form_data['success'] = false;
             $form_data['errors']  = $errors;
         }
-    
+
         echo json_encode($form_data);
     /*}
     

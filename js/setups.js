@@ -61,4 +61,10 @@ $(document).ready(function(){
     $('#voti').removeClass('hide');
   });
 
+  $('#exit').on('click', function(e){
+    e.preventDefault();
+    $(location).attr('href',"../index.html");
+    sessionStorage.removeItem("userId");
+  });
+
 });

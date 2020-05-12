@@ -136,7 +136,7 @@
   /* integrabile in jquery*/
    form .invalid-mail-l,
    form .invalid-psw-l,
-   form .invalid-nome-r,
+   form .invalid-username-r,
    form .invalid-mail-r,
    form .invalid-psw-r {
     font-size: 80%;

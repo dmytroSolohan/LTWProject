@@ -9,7 +9,7 @@ $(document).ready(function(){
   });
   
   function validateName(input){
-    if(input.trim().match(/^([a-zA-Z0-9_\-\.]+)\s([a-zA-Z0-9_\-\.]+)$/) == null) {
+    if(input.trim().match(/^([a-zA-Z0-9_\-\.]+)$/) == null || input.trim().length <= 5) {
             return false;
     }
 
@@ -83,17 +83,16 @@ $(document).ready(function(){
                 if(return_data.success){
                     sessionStorage.removeItem("userId");
                     sessionStorage.setItem("userId", JSON.stringify(return_data.userId));
-                    //console.log(return_data);
                     $(location).attr('href',"./server/login.html");
                 }
                 else{
-                    $('#mail-l').val("");
-                    $('#psw-l').val("");
+                    $('#email-l').val("");
+                    $('#pasword-l').val("");
+                    alert(return_data.posted);
                 }
             });
-
             ajaxRequest.fail(function(return_data){
-                alert(return_data.posted);
+                alert("Errore con il server, riprovare!");
             });
         }
 
@@ -103,17 +102,17 @@ $(document).ready(function(){
     $('#registra').submit(function(event){
         event.preventDefault();
 
-        var nome = $('#nome-r').val();
+        var username = $('#username-r').val();
         var email = $('#email-r').val();
         var passw = $('#pasw-r').val();
         
-        if(!validateName(nome)){
-            $('.invalid-nome-r').removeClass('hide');
-            $('.nome-r').removeClass('margine');
+        if(!validateName(username)){
+            $('.invalid-username-r').removeClass('hide');
+            $('.username-r').removeClass('margine');
         }
         else {
-            $('.invalid-nome-r').addClass('hide');
-            $('.nome-r').addClass('margine');
+            $('.invalid-username-r').addClass('hide');
+            $('.username-r').addClass('margine');
         }
 
         if(!validateMail(email)){
@@ -136,7 +135,7 @@ $(document).ready(function(){
             
         /*   qui codice per registrarsi */
           //prove
-          if(validateMail(email) && validatePass(passw)){
+          if(validateName(username) && validateMail(email) && validatePass(passw)){
             var ajaxRequest = $.ajax({
                     type:'POST',
                     url:'./server/verifyregist.php',
@@ -146,14 +145,15 @@ $(document).ready(function(){
             
             ajaxRequest.done(function(return_data){
                 if(return_data.status){
-                    //sessionStorage.removeItem("mailLogin");
+                    sessionStorage.removeItem("userId");
                     sessionStorage.setItem("userId", JSON.stringify(return_data.userId));
-                    //console.log(return_data);
                     $(location).attr('href',"./server/login.html");
                 }
                 else{
+                    $('#username-r').val("");
                     $('#email-r').val("");
                     $('#pasw-r').val("");
+                    alert(return_data.posted);
                 }
             });
 
