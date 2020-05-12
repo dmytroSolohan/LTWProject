@@ -9,16 +9,16 @@
         
         require 'db.php';
 
-        $id = $_POST['userId'];
+        $id = $_POST['id'];
         $materia = $_POST['materia']; 
         $nome_prof = $_POST['nome_prof'];
         $aula = $_POST['aula'];
-        $data = $_POST['data'];
+        $data = $_POST['date'];
         $voto = $_POST['voto'];
         $descrizione = $_POST['descrizione'];
 
         //questa va poi modificata con il db appartenente
-        $sql = "INSERT INTO NOTE (materia, nome_prof, aula, data, voto, descrizione, FK_stud) VALUES (?, ?, ?, ?, ?, ?, $id);";
+        $sql = "INSERT INTO NOTE (materia, nome_prof, aula, data, voto, descrizione, FK_stud) VALUES (?, ?, ?, ?, ?, ?, ?);";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             //gestire l'errore di connessione sql error
@@ -26,7 +26,7 @@
             $form_data['posted'] = 'DB problem !';
         }
         else {
-            mysqli_stmt_bind_param($stmt, "ssssss", $materia, $nome_prof, $aula,  $data, $voto, $descrizione);
+            mysqli_stmt_bind_param($stmt, "ssssiss", $materia, $nome_prof, $aula,  $data, $voto, $descrizione, $id);
             mysqli_stmt_execute($stmt);
                       
             $form_data['success'] = true;
