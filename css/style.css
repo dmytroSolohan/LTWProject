@@ -96,6 +96,36 @@
     text-align: center;
   }
 
+  #sub-data {
+    width: 60%;
+    padding-top: 10px;
+    position: relative;
+  }
+  #sub-data input, textarea{
+    width: 80%;
+    height: 40px;
+    background-color: #f2f2f2;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    padding: 0 10px;
+    margin-top: 20;
+  }
+
+  #sub-data textarea{
+    height: unset;
+  }
+  
+  /* da trovare ed allineare al centro*/
+  #sub-data button {
+    background-color: rgba(0,0,0,0.2);
+    border: 2px solid black;
+    color: black;
+    border-radius: 10px;
+    width: 80px;
+    right: 10px;
+  }
+
  
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 
