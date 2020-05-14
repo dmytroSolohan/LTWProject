@@ -70,10 +70,19 @@
                                 </table>
                             </div>
                             <div class="tab-pane fade" id="list-modif" role="tabpanel" aria-labelledby="list-modif-l">
-                                Qui ci andra' il form di registrazione dei dati personali
-                                <form action="">
-                                    
-                                </form>
+                                <div class="row justify-content-md-center">
+                                    <form id="modifica-dati">
+                                        <input type="text" id="username" name="Username" placeholder="Username" required>
+                                        <input type="text" id="nome" name="Nome" placeholder="Nome" required>
+                                        <input type="text" id="cognome" name="Cognome" placeholder="Cognome" required>
+                                        <input type="text" id="data_nascita" name="Data di Nascita" placeholder="Data: YYYY-MM-GG"required>
+                                        <input type="text" id="Indirizzo" name="Indirizzo" placeholder="Indirizzo"required>
+                                        <input type="text" id="citta"  name="Citta" placeholder="Citta" required>
+                                        <input type="text" id="paese"  name="paese" placeholder="Paese" required>
+                                        <input type="text" id="telefono"  name="telefono" placeholder="Telefono" required>
+                                        <input type="text" id="email"  name="email" placeholder="Email" required>
+
+                                        <button type="submit">Submit</button>
                             </div>
                             <div class="tab-pane fade" id="list-resto" role="tabpanel" aria-labelledby="list-resto-l">
                                 <div class="row justify-content-md-center">
@@ -162,6 +171,7 @@
     <script src="../js/query.js"></script>
     <script src="../js/setups.js"></script>
     <script src="../js/checkinsert.js"></script>
+    <script src="../js/checkpersonalinfo.js"></script>
 </body>
 
 </html>
