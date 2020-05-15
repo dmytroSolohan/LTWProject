@@ -9,7 +9,7 @@
         
         require 'db.php';
 
-        $id = $_POST['id'];
+        $ID = $_POST['ID'];
         $username = $_POST['username']; 
         $nome = $_POST['nome'];
         $cognome = $_POST['cognome'];
@@ -20,8 +20,7 @@
         $telefono = $_POST['telefono'];
         $email = $_POST['email'];
 
-
-        $sql = "UPDATE UTENTE SET username = '$username', nome = '$nome', cognome = '$cognome', data_nascita = '$data_nascita', indirizzo ='$indirizzo', citta = '$citta', paese = '$paese', email = '$email', telefono = '$telefono', WHERE id=$id";
+        $sql = "UPDATE UTENTE SET username = '$username', nome = '$nome', cognome = '$cognome', data_nascita = '$data_nascita', indirizzo ='$indirizzo', citta = '$citta', paese = '$paese', telefono ='$telefono, email ='$email' WHERE ID=$ID";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             //gestire l'errore di connessione sql error
@@ -29,7 +28,7 @@
             $form_data['posted'] = 'DB problem !';
         }
         else {
-            mysqli_stmt_bind_param($stmt, "ssssiss", $username, $nome, $cognome,  $data_nascita, $citta, $paese, $email, $telefono, $id);
+            mysqli_stmt_bind_param($stmt,"sssssssis",$username,$nome,$cognome,$data_nascita,$indirizzo,$citta,$paese,$telefono,$email);
             mysqli_stmt_execute($stmt);
                       
             $form_data['success'] = true;

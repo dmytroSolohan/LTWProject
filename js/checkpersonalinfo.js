@@ -1,6 +1,7 @@
 $(document).on("submit" , "#modifica-dati", function(event){
         event.preventDefault();
 
+        var ID = sessionStorage.getItem("userId")
         var username = $('#username').val();
         var nome = $('#nome').val();
         var cognome = $('#cognome').val();
@@ -12,7 +13,8 @@ $(document).on("submit" , "#modifica-dati", function(event){
         var email = $('#email').val();
 
 
-        
+
+        console.log(ID);
         console.log(username);
         console.log(nome);
         console.log(cognome);
@@ -28,7 +30,7 @@ $(document).on("submit" , "#modifica-dati", function(event){
                     type:'POST',
                     url:'./updatepersonalinfo.php',
                     dataType:'json',
-                    data:{ID:sessionStorage.getItem("userId"),username:username,nome:nome,cognome:cognome,data_nascita:data_nascita,indirizzo:indirizzo,citta:citta,
+                    data:{ID:ID,username:username,nome:nome,cognome:cognome,data_nascita:data_nascita,indirizzo:indirizzo,citta:citta,
                         paese:paese, telefono:telefono, email:email}
             });
             
