@@ -5,7 +5,7 @@
     $form_data = array(); //Pass back the data 
     
     /* Validate the form on the server side */
-    //if(isset($_POST['yep'])){
+    if(isset($_POST['id'])){
         
         require 'db.php';
 
@@ -26,7 +26,7 @@
             $form_data['posted'] = 'DB problem !';
         }
         else {
-            mysqli_stmt_bind_param($stmt, "ssssiss", $materia, $nome_prof, $aula,  $data, $voto, $descrizione, $id);
+            mysqli_stmt_bind_param($stmt, "ssssisi", $materia, $nome_prof, $aula,  $data, $voto, $descrizione, $id);
             mysqli_stmt_execute($stmt);
                       
             $form_data['success'] = true;
@@ -41,11 +41,11 @@
         }
     
         echo json_encode($form_data);
-    /*}
+    }
     
     else {
         header("Location: ../index.html");
         exit();
     }
-    */
+    
 ?>
