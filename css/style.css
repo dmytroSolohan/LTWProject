@@ -347,3 +347,38 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
   color: white;
 }
 
+
+  #list-tab a{
+    text-align: center;
+  }
+
+  #modifica-dati {
+    width: 60%;
+    padding-top: 10px;
+    position: relative;
+  }
+  #modifica-dati input, textarea{
+    width: 80%;
+    height: 40px;
+    background-color: #f2f2f2;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    padding: 0 10px;
+    margin-top: 20;
+  }
+
+  #modifica-dati textarea{
+    height: unset;
+  }
+  
+  /* da trovare ed allineare al centro*/
+  #modifica-dati button {
+    background-color: rgba(0,0,0,0.2);
+    border: 2px solid black;
+    color: black;
+    border-radius: 10px;
+    width: 80px;
+    right: 10px;
+  }
+
