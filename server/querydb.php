@@ -28,6 +28,9 @@
             case '3':
                 $sql = "SELECT materia, voto FROM NOTE WHERE FK_stud = ? ORDER BY voto;";
             break;
+            case '4':
+                $sql = "SELECT * FROM UTENTE WHERE ID = ?;";
+            break;
         }
                         
         $stmt = mysqli_stmt_init($conn);
@@ -84,6 +87,23 @@
                             array_push($row, $riga['voto']);
     
                         array_push($data, $row);    
+                    }
+                    break;
+                    case '4':
+                        while($riga = mysqli_fetch_assoc($result))
+                    {
+                        $row = array();
+                        array_push($row, $riga['username']);
+                        array_push($row, $riga['nome']);
+                        array_push($row, $riga['cognome']);
+                        array_push($row, $riga['data_nascita']);
+                        array_push($row, $riga['indirizzo']);
+                        array_push($row, $riga['citta']);
+                        array_push($row, $riga['paese']);
+                        array_push($row, $riga['telefono']);
+                        array_push($row, $riga['email']);
+    
+                        array_push($data, $row);  
                     }
                     break;
                     default:

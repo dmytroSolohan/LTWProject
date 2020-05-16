@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 
-    var num = [true, true, true, true];
+    var num = [true, true, true, true, true];
 
     function set(input){
         
@@ -14,18 +14,6 @@ $(document).ready(function(){
             data:{id:sessionStorage.getItem('userId'), in:input}
             });
 
-        /*
-            se success == false
-            error(
-            'db' => true, 
-
-            se success == true
-            form_data
-            'success' => true,
-            'posted' => 'Stringa',
-            'data' => array( insieme di variabili);
-            
-        */
         ajaxRequest.done(function(return_data){
             if(return_data.success){
 
@@ -74,6 +62,22 @@ $(document).ready(function(){
                         num[3] = false;          
                     break;
 
+                    case 4:
+                        $.each(return_data.data, function (i, item) {
+                            trHTML += '<tr><td>' + item[0]
+                                + '</td><td>' + item[1]
+                                + '</td><td>' + item[2]
+                                + '</td><td>' + item[3]
+                                + '</td><td>' + item[4]
+                                + '</td><td>' + item[5]
+                                + '</td><td>' + item[6]
+                                + '</td><td>' + item[7]
+                                + '</td><td>' + item[8] + '</td></tr>';
+                        });
+                        $('#records_dati').append(trHTML);
+                        num[4] = false;          
+                    break;
+
                     default:
                         alert("Errore richiesta !");
                     break;
@@ -114,6 +118,10 @@ $(document).ready(function(){
             set(3);
     });
 
-    $()
+    $('#list-dati-l').click(function(event){
+        event.preventDefault();
+        if(num[4])
+            set(4);
+    });
 
 });
