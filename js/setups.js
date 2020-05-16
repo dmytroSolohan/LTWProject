@@ -42,18 +42,21 @@ $(document).ready(function(){
   //cambio elementi nella pagina
   $('#home').on('click', function(e) {
     e.preventDefault();
+    $('.homepage').removeClass('hide');
     $('#dati').addClass('hide');
     $('#voti').addClass('hide');
   });
 
   $('#data').on('click', function(e) {
     e.preventDefault();
+    $('.homepage').addClass('hide');
     $('#dati').removeClass('hide');
     $('#voti').addClass('hide');
   });
 
   $('#grades').on('click', function(e) {
     e.preventDefault();
+    $('.homepage').addClass('hide');
     $('#dati').addClass('hide');
     $('#voti').removeClass('hide');
   });

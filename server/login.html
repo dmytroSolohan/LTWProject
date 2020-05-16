@@ -9,160 +9,195 @@
 
     </head>
 
-<body background="../img/bg.jpg">
-    <div id="wrapper">
-        <!-- barra menu sinistra -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li id="home"><a href="#homepage">Homepage</a></li>
-                <li id="data">Dati</li>
-                <li id="grades">Voti</li>
-                <li id="exit">Esci</li>
-            </ul>
-        </div>
-
-        <!-- contenuto destra -->
-        <div id="page-content-wrapper">
-            <div>
-                <button id="sidebarCollapse">
-                    <span>Menu</span>
-                </button>
+    <body background="../img/bg.jpg">
+        <div id="wrapper">
+            <!-- barra menu sinistra -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li id="home"><a href="#homepage">Homepage</a></li>
+                    <li id="data">Dati</li>
+                    <li id="grades">Voti</li>
+                    <li id="exit">Esci</li>
+                </ul>
             </div>
 
-            <div id="homepage" class="container jumbotron">
+            <!-- contenuto destra -->
+            <div id="page-content-wrapper">
+                <div>
+                    <button id="sidebarCollapse">
+                        <span>Menu</span>
+                    </button>
+                </div>
+
+                <div class="homepage container jumbotron">
                     <div class="row justify-content-md-center">
-                        <div class="col-3">
                             <h1><b>Benvenuto</b></h1>
-                        </div>
                     </div>
-            </div>
-
-            <div id="dati" class="container jumbotron hide">
-                <div class="jumbotron">
                     <div class="row justify-content-md-center">
-                        <div class="col-12">
-                            <!-- sto ancora cercando qualche colore figo-->
-                            <div class="list-group list-group-horizontal-xl" id="list-tab" role="tablist">
-                            <a class="list-group-item list-group-item-action active" id="list-dati-l" data-toggle="list" href="#list-dati" role="tab" aria-controls="dati">Visualizza i tuoi dati</a>
-                            <a class="list-group-item list-group-item-action" id="list-modif-l" data-toggle="list" href="#list-modif" role="tab" aria-controls="modifica">Modifica i tuoi dati</a>
-                            <a class="list-group-item list-group-item-action" id="list-resto-l" data-toggle="list" href="#list-resto" role="tab" aria-controls="resto">Modifica i voti, materie ...</a>
-                          </div>
-                        </div>
+                        <h6>Segui questi semplici passi per rendere al meglio la tua esperienza sulla piattaforma</h6>
                     </div>
                 </div>
-    
-                <div class="container jumbotron shadow-lg p-3 mb-5 bg-white rounded">
-                    <div class="row justify-content-md-center">
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="list-dati" role="tabpanel" aria-labelledby="list-dati-l">
-                                <table class="table" id="records_dati">
-                                    <tr>
-                                        <th scope="col">Username</th>
-                                        <th scope="col">Nome</th>
-                                        <th scope="col">Cognome</th>
-                                        <th scope="col">Data di nascita</th>
-                                        <th scope="col">Indirizzo</th>
-                                        <th scope="col">Citta'</th>
-                                        <th scope="col">Paese</th>
-                                        <th scope="col">Telefono</th>
-                                        <th scope="col">E-mail</th>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="tab-pane fade" id="list-modif" role="tabpanel" aria-labelledby="list-modif-l">
-                                <div class="row justify-content-md-center">
-                                    <form id="modifica-dati">
-                                        <input type="text" id="nome" name="Nome" placeholder="Nome" required>
-                                        <input type="text" id="cognome" name="Cognome" placeholder="Cognome" required>
-                                        <input type="text" id="data_nascita" name="Data di Nascita" placeholder="Data: YYYY-MM-GG"required>
-                                        <input type="text" id="indirizzo" name="Indirizzo" placeholder="Indirizzo"required>
-                                        <input type="text" id="citta"  name="Citta" placeholder="Citta" required>
-                                        <input type="text" id="paese"  name="paese" placeholder="Paese" required>
-                                        <input type="text" id="telefono"  name="telefono" placeholder="Telefono" required>
-                                        <button type="submit">Submit</button>
-                                    </form>
+
+                <div class="homepage container">
+                    <ul class="container1 row justify-content-md-center">
+                        <ul>
+                           <li>
+                              <div>
+                                <div class="title">Primo Passo</div>
+                                <div class="info">Aggiungi i tuoi dati personali, da creare un tuo profilo.</div>
+                                <div class="type"></div>
+                             </div><span class="number"></span>
+                          </li>
+                          <li>
+                             <div>
+                                <div class="title">Secondo Passo</div>
+                                <div class="info">Aggiungi al tuo Diario scolastico voti, materie etc.</div>
+           
+                             </div><span class="number"></span>
+                          </li>
+                          <li>
+                             <div>
+                                <div class="title">Terzo Passo</div>
+                                <div class="info">Porta sempre con te a portata di un click!</div>
+                                 
+                              </div><span class="number"></span>
+                           </li>
+                        </ul>
+                     </ul>
+                </div>
+
+                <div id="dati" class="container jumbotron hide">
+                    <div class="jumbotron">
+                        <div class="row justify-content-md-center">
+                            <div class="col-12">
+                                <!-- sto ancora cercando qualche colore figo-->
+                                <div class="list-group list-group-horizontal-xl" id="list-tab" role="tablist">
+                                    <a class="list-group-item list-group-item-action active" id="list-dati-l"
+                                        data-toggle="list" href="#list-dati" role="tab" aria-controls="dati">
+                                        Visualizza i tuoi dati</a>
+                                    <a class="list-group-item list-group-item-action" id="list-modif-l" data-toggle="list"
+                                        href="#list-modif" role="tab" aria-controls="modifica">Modifica i tuoi dati</a>
+                                    <a class="list-group-item list-group-item-action" id="list-resto-l" data-toggle="list"
+                                        href="#list-resto" role="tab" aria-controls="resto">Modifica i voti, materie ...</a>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="list-resto" role="tabpanel" aria-labelledby="list-resto-l">
-                                <div class="row justify-content-md-center">
-                                    <form id="sub-data">
-                                        <input type="text" id="nome_prof" name="nome_prof" placeholder="Nome Professore" required>
-                                        <input type="text" id="materia" name="materia" placeholder="Materia" required>
-                                        <input type="text" id="voto" name="voto" placeholder="Voto" required>
-                                        <input type="text" id="aula" name="aula" placeholder="Aula"required>
-                                        <input type="text" id="date" name="data" placeholder="Data: YYYY-MM-GG"required>
-                                        <textarea name="descrizione" id="descrizione" cols="30" rows="5" placeholder="Descrizione" required></textarea>
-                                        <button type="submit">Submit</button>
-                                    </form>
+                        </div>
+                    </div>
+
+                    <div class="container jumbotron shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="row justify-content-md-center">
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="list-dati" role="tabpanel" aria-labelledby="list-dati-l">
+                                    <table class="table" id="records_dati">
+                                        <tr>
+                                            <th scope="col">Username</th>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Cognome</th>
+                                            <th scope="col">Data di nascita</th>
+                                            <th scope="col">Indirizzo</th>
+                                            <th scope="col">Citta'</th>
+                                            <th scope="col">Paese</th>
+                                            <th scope="col">Telefono</th>
+                                            <th scope="col">E-mail</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade" id="list-modif" role="tabpanel" aria-labelledby="list-modif-l">
+                                    <div class="row justify-content-md-center">
+                                        <form id="modifica-dati">
+                                            <input type="text" id="nome" name="Nome" placeholder="Nome" required>
+                                            <input type="text" id="cognome" name="Cognome" placeholder="Cognome" required>
+                                            <input type="text" id="data_nascita" name="Data di Nascita" placeholder="Data: YYYY-MM-GG" required>
+                                            <input type="text" id="indirizzo" name="Indirizzo" placeholder="Indirizzo" required>
+                                            <input type="text" id="citta" name="Citta" placeholder="Citta" required>
+                                            <input type="text" id="paese" name="paese" placeholder="Paese" required>
+                                            <input type="text" id="telefono" name="telefono" placeholder="Telefono" required>
+                                            <button type="submit">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="list-resto" role="tabpanel" aria-labelledby="list-resto-l">
+                                    <div class="row justify-content-md-center">
+                                        <form id="sub-data">
+                                            <input type="text" id="nome_prof" name="nome_prof" placeholder="Nome Professore" required>
+                                            <input type="text" id="materia" name="materia" placeholder="Materia" required>
+                                            <input type="text" id="voto" name="voto" placeholder="Voto" required>
+                                            <input type="text" id="aula" name="aula" placeholder="Aula" required>
+                                            <input type="text" id="date" name="data" placeholder="Data: YYYY-MM-GG" required>
+                                            <textarea name="descrizione" id="descrizione" cols="30" rows="5" placeholder="Descrizione" required></textarea>
+                                            <button type="submit">Submit</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                          </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="voti" class="container jumbotron hide">
-                <div class="container jumbotron">
-                    <div class="row justify-content-md-center">
-                        <div class="col-6">
-                            <!-- sto ancora cercando qualche colore figo-->
-                            <div class="list-group list-group-horizontal-xl" id="list-tab" role="tablist">
-                            <a class="list-group-item list-group-item-action active" id="list-tutto-l" data-toggle="list" href="#list-tutto" role="tab" aria-controls="tutto">Tutto</a>
-                            <a class="list-group-item list-group-item-action" id="list-professori-l" data-toggle="list" href="#list-professori" role="tab" aria-controls="professori">Professori</a>
-                            <a class="list-group-item list-group-item-action" id="list-voti-l" data-toggle="list" href="#list-voti" role="tab" aria-controls="voti">Voti</a>
-                            <a class="list-group-item list-group-item-action" id="list-materia-l" data-toggle="list" href="#list-materia" role="tab" aria-controls="materie">Materie</a>
-                          </div>
                         </div>
                     </div>
                 </div>
-    
-                <div class="container jumbotron shadow-lg p-3 mb-5 bg-white rounded">
-                    <div class="row justify-content-md-center">
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="list-tutto" role="tabpanel" aria-labelledby="list-tutto-l">
-                                <table class="table" id="records_tutto">
-                                    <tr>
-                                        <th scope="col">Materia</th>
-                                        <th scope="col">Professore</th>
-                                        <th scope="col">Aula</th>
-                                        <th scope="col">Data</th>
-                                        <th scope="col">Voto</th>
-                                        <th scope="col">Descrizione</th>
-                                    </tr>
-                                </table>
+
+                <div id="voti" class="container jumbotron hide">
+                    <div class="container jumbotron">
+                        <div class="row justify-content-md-center">
+                            <div class="col-6">
+                                <!-- sto ancora cercando qualche colore figo-->
+                                <div class="list-group list-group-horizontal-xl" id="list-tab" role="tablist">
+                                    <a class="list-group-item list-group-item-action active" id="list-tutto-l" data-toggle="list" href="#list-tutto" role="tab" aria-controls="tutto">Tutto</a>
+                                    <a class="list-group-item list-group-item-action" id="list-professori-l" data-toggle="list" href="#list-professori" role="tab" aria-controls="professori">Professori</a>
+                                    <a class="list-group-item list-group-item-action" id="list-voti-l" data-toggle="list" href="#list-voti" role="tab" aria-controls="voti">Voti</a>
+                                    <a class="list-group-item list-group-item-action" id="list-materia-l" data-toggle="list" href="#list-materia" role="tab" aria-controls="materie">Materie</a>
+                                </div>
                             </div>
-                            <div class="tab-pane fade" id="list-professori" role="tabpanel" aria-labelledby="list-professori-l">
-                                <table class="table" id="records_prof">
-                                    <tr>
-                                        <th scope="col">Professore</th>
-                                        <th scope="col">Materia</th>
-                                        <th scope="col">Aula</th>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="tab-pane fade" id="list-materia" role="tabpanel" aria-labelledby="list-materia-l">
-                                <table class="table" id="records_materia">
-                                    <tr>
-                                        <th scope="col">Materia</th>
-                                        <th scope="col">Voto</th>
-                                    </tr>
-                                </table>
-                            </div>
-                          <div class="tab-pane fade" id="list-voti" role="tabpanel" aria-labelledby="list-voti-l">
-                            <table class="table" id="records_voti">
-                                <tr>
-                                    <th scope="col">Materia</th>
-                                    <th scope="col">Voto</th>
-                                </tr>
-                            </table>
                         </div>
-                      </div>
+                    </div>
+
+                    <div class="container jumbotron shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="row justify-content-md-center">
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="list-tutto" role="tabpanel" aria-labelledby="list-tutto-l">
+                                    <table class="table" id="records_tutto">
+                                        <tr>
+                                            <th scope="col">Materia</th>
+                                            <th scope="col">Professore</th>
+                                            <th scope="col">Aula</th>
+                                            <th scope="col">Data</th>
+                                            <th scope="col">Voto</th>
+                                            <th scope="col">Descrizione</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade" id="list-professori" role="tabpanel" aria-labelledby="list-professori-l">
+                                    <table class="table" id="records_prof">
+                                        <tr>
+                                            <th scope="col">Professore</th>
+                                            <th scope="col">Materia</th>
+                                            <th scope="col">Aula</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade" id="list-materia" role="tabpanel" aria-labelledby="list-materia-l">
+                                    <table class="table" id="records_materia">
+                                        <tr>
+                                            <th scope="col">Materia</th>
+                                            <th scope="col">Voto</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade" id="list-voti" role="tabpanel" aria-labelledby="list-voti-l">
+                                    <table class="table" id="records_voti">
+                                        <tr>
+                                            <th scope="col">Materia</th>
+                                            <th scope="col">Voto</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
 
+
+            </div>
         </div>
+
     </div>
     <!-- Link js-->
     <script src="../js/jquery/jquery.min.js"></script>

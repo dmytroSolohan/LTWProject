@@ -6,7 +6,7 @@
     $data = array();
 
 /* Validate the form on the server side */
-    //if(isset($_POST['log-in'])){
+    if(isset($_POST['id']) && isset($_POST['in'])){
             
         require 'db.php';
 
@@ -106,11 +106,11 @@
         }
     
         echo json_encode($form_data);
-    /*}
+    }
     
     else {
         header("Location: ../index.html");
         exit();
-    } */
+    } 
     
 ?>
