@@ -92,16 +92,17 @@
     cursor: pointer;
   }
 
-  #list-tab a{
+  #list-tab a {
     text-align: center;
   }
 
-  #sub-data {
+  #sub-data, 
+  #modifica-dati {
     width: 60%;
     padding-top: 10px;
     position: relative;
   }
-  #sub-data input, textarea{
+  .tab-content input, textarea{
     width: 80%;
     height: 40px;
     background-color: #f2f2f2;
@@ -117,7 +118,7 @@
   }
   
   /* da trovare ed allineare al centro*/
-  #sub-data button {
+  .tab-content button {
     background-color: rgba(0,0,0,0.2);
     border: 2px solid black;
     color: black;
@@ -126,7 +127,6 @@
     right: 10px;
   }
 
- 
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 
 
@@ -266,7 +266,6 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 
 .container1 ul {
   margin: 0;
-  margin-top: -360px;
   list-style: none;
   position: absolute;
   padding: 1px 100px;
@@ -346,39 +345,3 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 .table-striped{
   color: white;
 }
-
-
-  #list-tab a{
-    text-align: center;
-  }
-
-  #modifica-dati {
-    width: 60%;
-    padding-top: 10px;
-    position: relative;
-  }
-  #modifica-dati input, textarea{
-    width: 80%;
-    height: 40px;
-    background-color: #f2f2f2;
-    border: none;
-    outline: none;
-    font-size: 12px;
-    padding: 0 10px;
-    margin-top: 20;
-  }
-
-  #modifica-dati textarea{
-    height: unset;
-  }
-  
-  /* da trovare ed allineare al centro*/
-  #modifica-dati button {
-    background-color: rgba(0,0,0,0.2);
-    border: 2px solid black;
-    color: black;
-    border-radius: 10px;
-    width: 80px;
-    right: 10px;
-  }
-
