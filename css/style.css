@@ -148,8 +148,19 @@
     top: 50px;
   }
 
-  @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+  .container-sm h1, p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding: 16px;
+    font-weight: bolder;
+  }
 
+  .container-sm h1>span, .container-sm p>span {
+    background-color: yellow;
+    line-height: 2
+  }
+
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
   .container1 ul {
     margin: 0;
     list-style: none;
