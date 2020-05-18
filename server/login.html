@@ -88,19 +88,6 @@
                         <div class="row justify-content-md-center">
                             <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade show" id="list-dati" role="tabpanel" aria-labelledby="list-dati-l">
-                                    <table class="table" id="records_dati">
-                                        <tr>
-                                            <th scope="col">Username</th>
-                                            <th scope="col">Nome</th>
-                                            <th scope="col">Cognome</th>
-                                            <th scope="col">Data di nascita</th>
-                                            <th scope="col">Indirizzo</th>
-                                            <th scope="col">Citta'</th>
-                                            <th scope="col">Paese</th>
-                                            <th scope="col">Telefono</th>
-                                            <th scope="col">E-mail</th>
-                                        </tr>
-                                    </table>
                                 </div>
                                 <div class="tab-pane fade" id="list-modif" role="tabpanel" aria-labelledby="list-modif-l">
                                     <div class="row justify-content-md-center">
@@ -121,7 +108,7 @@
                                         <form id="sub-data">
                                             <input type="text" id="nome_prof" name="nome_prof" placeholder="Nome Professore" required>
                                             <input type="text" id="materia" name="materia" placeholder="Materia" required>
-                                            <input type="text" id="voto" name="voto" placeholder="Voto" required>
+                                            <input type="text" id="voto" name="voto" placeholder="Voto">
                                             <input type="text" id="aula" name="aula" placeholder="Aula" required>
                                             <input type="text" id="date" name="data" placeholder="Data: YYYY-MM-GG" required>
                                             <textarea name="descrizione" id="descrizione" cols="30" rows="5" placeholder="Descrizione" required></textarea>
@@ -153,41 +140,12 @@
                         <div class="row justify-content-md-center">
                             <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade show" id="list-tutto" role="tabpanel" aria-labelledby="list-tutto-l">
-                                    <table class="table" id="records_tutto">
-                                        <tr>
-                                            <th scope="col">Materia</th>
-                                            <th scope="col">Professore</th>
-                                            <th scope="col">Aula</th>
-                                            <th scope="col">Data</th>
-                                            <th scope="col">Voto</th>
-                                            <th scope="col">Descrizione</th>
-                                        </tr>
-                                    </table>
                                 </div>
                                 <div class="tab-pane fade" id="list-professori" role="tabpanel" aria-labelledby="list-professori-l">
-                                    <table class="table" id="records_prof">
-                                        <tr>
-                                            <th scope="col">Professore</th>
-                                            <th scope="col">Materia</th>
-                                            <th scope="col">Aula</th>
-                                        </tr>
-                                    </table>
                                 </div>
                                 <div class="tab-pane fade" id="list-materia" role="tabpanel" aria-labelledby="list-materia-l">
-                                    <table class="table" id="records_materia">
-                                        <tr>
-                                            <th scope="col">Materia</th>
-                                            <th scope="col">Voto</th>
-                                        </tr>
-                                    </table>
                                 </div>
                                 <div class="tab-pane fade" id="list-voti" role="tabpanel" aria-labelledby="list-voti-l">
-                                    <table class="table" id="records_voti">
-                                        <tr>
-                                            <th scope="col">Materia</th>
-                                            <th scope="col">Voto</th>
-                                        </tr>
-                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -199,8 +157,8 @@
     <!-- Link js-->
     <script src="../js/jquery/jquery.min.js"></script>
     <script src="../js/bootstrap/bootstrap.min.js"></script>
-    <script src="../js/query.js"></script>
     <script src="../js/setups.js"></script>
+    <script src="../js/query.js"></script>
     <script src="../js/checkinsert.js"></script>
     <script src="../js/checkpersonalinfo.js"></script>
 </body>

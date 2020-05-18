@@ -1,11 +1,7 @@
 
 $(document).ready(function(){
 
-    var num = [true, true, true, true, true];
-
     function set(input){
-        
-        num[input] = false;
 
         var ajaxRequest =$.ajax({
             type:'POST',
@@ -22,6 +18,15 @@ $(document).ready(function(){
                 switch(input)
                 {
                     case 0:
+                        trHTML = "<table class='table' id='records_tutto'>"
+                                    + "<tr>" 
+                                        + "<th scope='col'>Materia</th>"
+                                        + "<th scope='col'>Professore</th>"
+                                        + "<th scope='col'>Aula</th>"
+                                        + "<th scope='col'>Data</th>"
+                                        + "<th scope='col'>Voto</th>"
+                                        + "<th scope='col'>Descrizione</th>"
+                                    + "</tr>";                                
                         $.each(return_data.data, function (i, item) {
                             trHTML += '<tr><td>' + item[0]
                                 + '</td><td>' + item[1]
@@ -30,39 +35,71 @@ $(document).ready(function(){
                                 + '</td><td>' + item[4]
                                 + '</td><td>' + item[5] + '</td></tr>';
                         });
-                        $('#records_tutto').append(trHTML);
-                        num[0] = false;
+                        trHTML += "</table>";
+                        $('#records_tutto').remove();
+                        $('#list-tutto').append(trHTML);
                     break;
 
                     case 1:
-                        $.each(return_data.data, function (i, item) {
+                        trHTML = "<table class='table' id='records_prof'>"
+                                    + "<tr>" 
+                                        + "<th scope='col'>Nome</th>"
+                                        + "<th scope='col'>Materia</th>"
+                                        + "<th scope='col'>Aula</th>"
+                                    + "</tr>"; 
+                        $.each(return_data.data, function (i, item) {                            
                             trHTML += '<tr><td>' + item[0]
                                 + '</td><td>' + item[1]
                                 + '</td><td>' + item[2] + '</td></tr>';
                         });
-                        $('#records_prof').append(trHTML);
-                        num[1] = false;            
+                        trHTML += "</table>";
+                        $("#records_prof").remove();
+                        $('#list-professori').append(trHTML);
                     break;
 
                     case 2:
+                        trHTML = "<table class='table' id='records_materia'>"
+                                    + "<tr>" 
+                                        + "<th scope='col'>Materia</th>"
+                                        + "<th scope='col'>Aula</th>"
+                                    + "</tr>"; 
                         $.each(return_data.data, function (i, item) {
                             trHTML += '<tr><td>' + item[0]
                                 + '</td><td>' + item[1] + '</td></tr>';
                         });
-                        $('#records_materia').append(trHTML);
-                        num[2] = false;           
+                        trHTML += "</table>";
+                        $("#records_materia").remove();
+                        $('#list-materia').append(trHTML);
                     break;
 
                     case 3:
+                        trHTML = "<table class='table' id='records_voti'>"
+                                    + "<tr>" 
+                                        + "<th scope='col'>Materia</th>"
+                                        + "<th scope='col'>Aula</th>"
+                                    + "</tr>"; 
                         $.each(return_data.data, function (i, item) {
                             trHTML += '<tr><td>' + item[0]
                                 + '</td><td>' + item[1] + '</td></tr>';
                         });
-                        $('#records_voti').append(trHTML);
-                        num[3] = false;          
+                        trHTML += "</table>";
+                        $("#records_voti").remove();
+                        $('#list-voti').append(trHTML);
                     break;
 
                     case 4:
+                        trHTML = "<table class='table' id='records_dati'>"
+                                        + "<tr>" 
+                                            + "<th scope='col'>Username</th>" 
+                                            + "<th scope='col'>Nome</th>" 
+                                            + "<th scope='col'>Cognome</th>"
+                                            + "<th scope='col'>Data di nascita</th>"
+                                            + "<th scope='col'>Indirizzo</th>"
+                                            + "<th scope='col'>Citta'</th>"
+                                            + "<th scope='col'>Paese</th>"
+                                            + "<th scope='col'>Telefono</th>"
+                                            + "<th scope='col'>E-mail</th>"
+                                        + "</tr>";
                         $.each(return_data.data, function (i, item) {
                             trHTML += '<tr><td>' + item[0]
                                 + '</td><td>' + item[1]
@@ -72,10 +109,12 @@ $(document).ready(function(){
                                 + '</td><td>' + item[5]
                                 + '</td><td>' + item[6]
                                 + '</td><td>' + item[7]
-                                + '</td><td>' + item[8] + '</td></tr>';
+                                + '</td><td>' + item[8] 
+                                + '</td></tr>';
                         });
-                        $('#records_dati').append(trHTML);
-                        num[4] = false;          
+                        trHTML += "</table>";
+                        $("#records_dati").remove();
+                        $('#list-dati').append(trHTML);
                     break;
 
                     default:
@@ -96,32 +135,27 @@ $(document).ready(function(){
 
     $('#list-tutto-l').click(function(event){
         event.preventDefault();
-        if(num[0])
-            set(0);
+        set(0);
     });
 
     $('#list-professori-l').click(function(event){
         event.preventDefault();
-        if(num[1])
-            set(1);
+        set(1);
     });
 
     $('#list-materia-l').click(function(event){
         event.preventDefault();
-        if(num[2])
-            set(2);
+        set(2);
     });
 
     $('#list-voti-l').click(function(event){
         event.preventDefault();
-        if(num[3])
-            set(3);
+        set(3);
     });
 
     $('#list-dati-l').click(function(event){
         event.preventDefault();
-        if(num[4])
-            set(4);
+        set(4);
     });
 
 });

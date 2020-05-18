@@ -5,7 +5,7 @@
     $form_data = array(); //Pass back the data 
     
     /* Validate the form on the server side */
-    if(isset($_POST['ID']) && isset($_POST['materia'])){
+    if(isset($_POST['id']) && isset($_POST['materia'])){
         
         require 'db.php';
 

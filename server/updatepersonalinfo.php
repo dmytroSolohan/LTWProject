@@ -5,11 +5,11 @@
     $form_data = array(); //Pass back the data 
     
     /* Validate the form on the server side */
-    if(isset($_POST['ID']) && isset($_POST['nome'])){
+    if(isset($_POST['id']) && isset($_POST['nome'])){
         
         require 'db.php';
 
-        $ID = $_POST['ID'];
+        $ID = $_POST['id'];
         $nome = $_POST['nome'];
         $cognome = $_POST['cognome'];
         $data_nascita = $_POST['data_nascita'];
@@ -18,7 +18,7 @@
         $paese = $_POST['paese'];
         $telefono = $_POST['telefono'];
 
-        $sql = "UPDATE UTENTE SET nome = ?, cognome = ?, data_nascita = ?, indirizzo = ?, citta =?, paese = ?, telefono = ? WHERE ID = ?;";
+        $sql = "UPDATE UTENTE SET nome = ?, cognome = ?, data_nascita = ?, indirizzo = ?, citta = ?, paese = ?, telefono = ? WHERE ID = ?;";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             //gestire l'errore di connessione sql error
