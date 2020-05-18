@@ -25,8 +25,8 @@ $(document).ready(function(){
                                         + "<th scope='col'>Aula</th>"
                                         + "<th scope='col'>Data</th>"
                                         + "<th scope='col'>Voto</th>"
-                                        + "<th scope='col'>Descrizione</th>"
-                                    + "</tr>";                                
+                                        + "<th scope='col'>Commento</th>"
+                                    + "</tr>";
                         $.each(return_data.data, function (i, item) {
                             trHTML += '<tr><td>' + item[0]
                                 + '</td><td>' + item[1]

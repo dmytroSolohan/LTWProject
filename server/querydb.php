@@ -26,7 +26,7 @@
                 $sql = "SELECT materia, voto FROM NOTE WHERE FK_stud = ? ORDER BY materia;";
             break;
             case '3':
-                $sql = "SELECT materia, voto FROM NOTE WHERE FK_stud = ? ORDER BY voto;";
+                $sql = "SELECT materia, voto FROM NOTE WHERE FK_stud = ? ORDER BY voto desc;";
             break;
             case '4':
                 $sql = "SELECT * FROM UTENTE WHERE ID = ?;";
