@@ -75,6 +75,19 @@
                     }
                     break;
                     case '2':
+                        while($riga = mysqli_fetch_assoc($result))
+                        {
+                            $row = array();
+    
+                            array_push($row, $riga['materia']);
+                            if($riga['voto'] == null)
+                                array_push($row, "Nessun voto");
+                            else
+                                array_push($row, $riga['voto']);
+        
+                            array_push($data, $row);    
+                        }
+                    break;
                     case '3':
                         while($riga = mysqli_fetch_assoc($result))
                     {
@@ -82,7 +95,7 @@
 
                         array_push($row, $riga['materia']);
                         if($riga['voto'] == null)
-                            array_push($row, "Nessun voto");
+                            continue;
                         else
                             array_push($row, $riga['voto']);
     

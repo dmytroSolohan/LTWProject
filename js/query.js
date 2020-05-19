@@ -61,7 +61,7 @@ $(document).ready(function(){
                         trHTML = "<table class='table' id='records_materia'>"
                                     + "<tr>" 
                                         + "<th scope='col'>Materia</th>"
-                                        + "<th scope='col'>Aula</th>"
+                                        + "<th scope='col'>Voto</th>"
                                     + "</tr>"; 
                         $.each(return_data.data, function (i, item) {
                             trHTML += '<tr><td>' + item[0]
@@ -76,7 +76,7 @@ $(document).ready(function(){
                         trHTML = "<table class='table' id='records_voti'>"
                                     + "<tr>" 
                                         + "<th scope='col'>Materia</th>"
-                                        + "<th scope='col'>Aula</th>"
+                                        + "<th scope='col'>Voto</th>"
                                     + "</tr>"; 
                         $.each(return_data.data, function (i, item) {
                             trHTML += '<tr><td>' + item[0]

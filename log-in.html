@@ -1,0 +1,89 @@
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <title>ClasseOnline</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+        <link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css">
+        <link href="./css/style.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/login.css" type="text/css">
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <!-- barra menu sinistra -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li><a href="./index.html">Homepage</a></li>
+                    <li><a href="./log-in.html">Accedi</a></li>
+                    <li><a href="./log-in.html">Registrati</a></li>
+                    <li><a href="./about.html">About</a></li>
+                </ul>
+            </div>
+
+            <!-- contenuto destra -->
+            <div id="page-content-wrapper">
+                <div>
+                    <button id="sidebarCollapse">
+                        <span>Menu</span>
+                    </button>
+                </div>
+                <div class="contenitore">
+
+                    <div class="dietro">
+                        <div class="acc-Msg">
+                            <div class="textcontent">
+                                <p class="title">Non hai un account?</p>
+                                <p>Registrati per salvare i tuoi dati.</p>
+                                <button id="puls-sin">Registrati</button>
+                            </div>
+                        </div>
+                        <div class="reg-Msg visibility">
+                            <div class="textcontent">
+                                <p class="title">Hai un account?</p>
+                                <p>Accedi per vedere i tuoi dati.</p>
+                                <button id="puls-des">Accedi</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--^ DIETRO ^-->
+
+                    <div class="davanti">
+                        <div class="accedi">
+                            <h2>Accedi</h2>
+                            <form id="logga">
+                                <input id="mail-l" class="email-l margine" type="text" name="email" placeholder="Email" required autofocus>
+                                <label class="invalid-mail-l hide">Mail errata</label>
+                                <input id="psw-l" class="password-l margine" type="password" name="password" placeholder="Password" required>
+                                <label class="invalid-psw-l hide">Password errata</label>
+                                <p id="checkpsw">Mostra password</p>
+                                <button type="submit" name="log-in">Accedi</button>
+                            </form>
+                        </div>
+
+                        <div class="registrati hide">
+                            <h2>Registrati</h2>
+                            <form id="registra">
+                                <input class="username-r margine" id="username-r" type="text" name="username" placeholder="Username" required>
+                                <label class="invalid-username-r hide">Scrivi un username corretto</label>
+                                <input class="email-r margine" id="email-r" type="text" name="email" placeholder="Email" required>
+                                <label class="invalid-mail-r hide">Email errata</label>
+                                <input class="pasw-r margine" id="pasw-r" type="password" name="password" placeholder="Password" required>
+                                <label class="invalid-psw-r hide">Password troppo corta</label>
+                                <button type="submit" name="sign-up">Registrati</button>
+                            </form>
+                        </div>
+
+                    </div>
+                    <!--^ DAVANTI ^-->
+                </div>
+            </div>
+        </div>
+        <!-- Link js-->
+        <script src="./js/jquery/jquery.min.js"></script>
+        <script src="./js/bootstrap/bootstrap.min.js"></script>
+        <script src="./js/login.js"></script>
+        <script src="./js/setups.js"></script>
+    </body>
+
+</html>
