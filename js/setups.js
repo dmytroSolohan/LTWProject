@@ -1,5 +1,9 @@
-    
-    /*nascondi mostra menu*/
+function checkUserId(){
+  if(sessionStorage.getItem("userId") == undefined)
+    window.location.replace("../log-in.html");
+}    
+
+/*nascondi mostra menu*/
 $(document).ready(function(){
 
   $("#sidebarCollapse").click(function(e){
