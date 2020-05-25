@@ -39,20 +39,20 @@ $(document).ready(function () {
         var password = $('#psw-l').val();
 
         if (!validateMail(mail)) {
-            $('.invalid-mail-l').removeClass('hide');
+            $('.invalid-mail-l').show();
             $('.email-l').removeClass('margine');
         }
         else {
-            $('.invalid-mail-l').addClass('hide');
+            $('.invalid-mail-l').hide();
             $('.email-l').addClass('margine');
         }
 
         if (!validatePass(password)) {
-            $('.invalid-psw-l').removeClass('hide');
+            $('.invalid-psw-l').show();
             $('.password-l').removeClass('margine');
         }
         else {
-            $('.invalid-psw-l').addClass('hide');
+            $('.invalid-psw-l').hide();
             $('.password-l').addClass('margine');
         }
         /*   qui codice per acccedere */
@@ -106,29 +106,29 @@ $(document).ready(function () {
         var passw = $('#pasw-r').val();
 
         if (!validateName(username)) {
-            $('.invalid-username-r').removeClass('hide');
+            $('.invalid-username-r').show();
             $('.username-r').removeClass('margine');
         }
         else {
-            $('.invalid-username-r').addClass('hide');
+            $('.invalid-username-r').hide();
             $('.username-r').addClass('margine');
         }
 
         if (!validateMail(email)) {
-            $('.invalid-mail-r').removeClass('hide');
+            $('.invalid-mail-r').show();
             $('.email-r').removeClass('margine');
         }
         else {
-            $('.invalid-mail-r').addClass('hide');
+            $('.invalid-mail-r').hide();
             $('.email-r').addClass('margine');
         }
 
         if (!validatePass(passw)) {
-            $('.invalid-psw-r').removeClass('hide');
+            $('.invalid-psw-r').show();
             $('.pasw-r').removeClass('margine');
         }
         else {
-            $('.invalid-psw-r').addClass('hide');
+            $('.invalid-psw-r').hide();
             $('.pasw-r').addClass('margine');
         }
 

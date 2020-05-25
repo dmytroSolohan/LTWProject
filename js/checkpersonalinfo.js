@@ -61,6 +61,5 @@ $(document).ready(function () {
         else {
             alert("Dati non corretti!");
         }
-
     });
 });

@@ -1,4 +1,9 @@
 
+ function checkUserId() {
+    if(sessionStorage.getItem("userId") === null || sessionStorage.length < 1)
+      window.location.replace("../log-in.html");
+  };
+  
 $(document).ready(function () {
 
     function validateName(input) {

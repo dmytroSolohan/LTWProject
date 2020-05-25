@@ -1,7 +1,3 @@
-function checkUserId() {
-  if (sessionStorage.getItem("userId") == undefined)
-    window.location.replace("../log-in.html");
-}
 
 /*nascondi mostra menu*/
 $(document).ready(function () {
@@ -38,38 +34,34 @@ $(document).ready(function () {
   });
 
   /* upgrade function */
-  $(".sidebar-nav li").each(function() {
-    $(this).on("click", function(){
-      if($(this).attr('id') == 'home')
-      {
-        $('#homepage').show( "slow", arguments.callee );
+  $(".sidebar-nav li").each(function () {
+    $(this).on("click", function () {
+      if ($(this).attr('id') == 'home') {
+        $('#homepage').show("slow", arguments.callee);
         $('#datas h2').contents().replaceWith('Benvenuto');
         $('#datas p').contents().replaceWith('Ricordati di modificare i dati.');
-        $('#dati').hide( "slow", arguments.callee );
-        $('#voti').hide( "slow", arguments.callee );
+        $('#dati').hide("slow", arguments.callee);
+        $('#voti').hide("slow", arguments.callee);
       }
-      else if($(this).attr('id') == 'data')
-      {
-        $('#homepage').hide( "slow", arguments.callee );
+      else if ($(this).attr('id') == 'data') {
+        $('#homepage').hide("slow", arguments.callee);
         $('#datas h2').contents().replaceWith('Dati personali e modifiche');
         $('#datas p').contents().replaceWith('Qui puoi trovare i tuoi dati personali e modificarli.');
-        $('#dati').show( "slow", arguments.callee );
-        $('#voti').hide( "slow", arguments.callee );
+        $('#dati').show("slow", arguments.callee);
+        $('#voti').hide("slow", arguments.callee);
       }
-      else if ($(this).attr('id') == 'grades')
-      {
-        $('#homepage').hide( "slow", arguments.callee );
+      else if ($(this).attr('id') == 'grades') {
+        $('#homepage').hide("slow", arguments.callee);
         $('#datas h2').contents().replaceWith('Diario dei voti');
         $('#datas p').contents().replaceWith('Qui puoi visualizzare tutti i voti che hai inserito.');
-        $('#dati').hide( "slow", arguments.callee );
-        $('#voti').show( "slow", arguments.callee );
+        $('#dati').hide("slow", arguments.callee);
+        $('#voti').show("slow", arguments.callee);
       }
-      else if($(this).attr('id') == 'exit')
-      {
+      else if ($(this).attr('id') == 'exit') {
         sessionStorage.removeItem("userId");
-        $(location).attr('href',"../index.html");
+        $(location).attr('href', "../index.html");
       }
-    });    
+    });
   });
 
   /* vecchio metodo
