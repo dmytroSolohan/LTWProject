@@ -54,7 +54,7 @@ $(document).ready(function () {
                     alert(return_data.posted);
                 }
             });
-            ajaxRequest.fail(function (return_data) {
+            ajaxRequest.fail(function () {
                 alert("Errore con il server, riprovare!");
             });
         }
