@@ -29,14 +29,16 @@
                     </button>
                 </div>
 
-                <div class="homepage container jumbotron align-content-center">
+                <div id="datas" class="container jumbotron align-content-center">
                     <div class="row mb-4 justify-content-md-center">
                         <h2 class="display-4 font-weight-light">Benvenuto</h2>
+                    </div>    
+                    <div class="row mb-4 justify-content-md-center">
                         <p class="font-italic text-muted">Se è la prima volta che accedi, segui questi semplici passi per rendere al meglio la tua esperienza sulla piattaforma.</p>
                     </div>
                 </div>
 
-                <div class="homepage container">
+                <div id="homepage" class="container">
                     <ul class="container1 row justify-content-md-center">
                         <ul>
                            <li>
@@ -70,7 +72,7 @@
                             <div class="col-12">
                                 <!-- sto ancora cercando qualche colore figo-->
                                 <div class="list-group list-group-horizontal-xl" id="list-tab" role="tablist">
-                                    <a class="list-group-item list-group-item-action" id="list-dati-l"
+                                    <a class="iterabili list-group-item list-group-item-action" id="list-dati-l"
                                         data-toggle="list" href="#list-dati" role="tab" aria-controls="dati">
                                         Visualizza i tuoi dati</a>
                                     <a class="list-group-item list-group-item-action" id="list-modif-l" data-toggle="list"
@@ -86,6 +88,19 @@
                         <div class="row justify-content-md-center">
                             <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade show" id="list-dati" role="tabpanel" aria-labelledby="list-dati-l">
+                                    <table class='table' id='records_dati'>
+                                        <tr>
+                                            <th scope='col'>Username</th>
+                                            <th scope='col'>Nome</th>
+                                            <th scope='col'>Cognome</th>
+                                            <th scope='col'>Data di nascita</th>
+                                            <th scope='col'>Indirizzo</th>
+                                            <th scope='col'>Citta'</th>
+                                            <th scope='col'>Paese</th>
+                                            <th scope='col'>Telefono</th>
+                                            <th scope='col'>E-mail</th>
+                                        </tr>
+                                    </table>
                                 </div>
                                 <div class="tab-pane fade" id="list-modif" role="tabpanel" aria-labelledby="list-modif-l">
                                     <div class="row justify-content-md-center">
@@ -125,10 +140,10 @@
                             <div class="col-6">
                                 <!-- sto ancora cercando qualche colore figo-->
                                 <div class="list-group list-group-horizontal-xl" id="list-tab" role="tablist">
-                                    <a class="list-group-item list-group-item-action" id="list-tutto-l" data-toggle="list" href="#list-tutto" role="tab" aria-controls="tutto">Tutto</a>
-                                    <a class="list-group-item list-group-item-action" id="list-professori-l" data-toggle="list" href="#list-professori" role="tab" aria-controls="professori">Professori</a>
-                                    <a class="list-group-item list-group-item-action" id="list-voti-l" data-toggle="list" href="#list-voti" role="tab" aria-controls="voti">Voti</a>
-                                    <a class="list-group-item list-group-item-action" id="list-materia-l" data-toggle="list" href="#list-materia" role="tab" aria-controls="materie">Materie</a>
+                                    <a class="iterabili list-group-item list-group-item-action" id="list-tutto-l" data-toggle="list" href="#list-tutto" role="tab" aria-controls="tutto">Tutto</a>
+                                    <a class="iterabili list-group-item list-group-item-action" id="list-professori-l" data-toggle="list" href="#list-professori" role="tab" aria-controls="professori">Professori</a>
+                                    <a class="iterabili list-group-item list-group-item-action" id="list-voti-l" data-toggle="list" href="#list-voti" role="tab" aria-controls="voti">Voti</a>
+                                    <a class="iterabili list-group-item list-group-item-action" id="list-materia-l" data-toggle="list" href="#list-materia" role="tab" aria-controls="materie">Materie</a>
                                 </div>
                             </div>
                         </div>
@@ -138,12 +153,41 @@
                         <div class="row justify-content-md-center">
                             <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade show" id="list-tutto" role="tabpanel" aria-labelledby="list-tutto-l">
+                                    <table class='table' id='records_tutto'>
+                                        <tr>
+                                            <th scope='col'>Materia</th>
+                                            <th scope='col'>Professore</th>
+                                            <th scope='col'>Aula</th>
+                                            <th scope='col'>Data</th>
+                                            <th scope='col'>Voto</th>
+                                            <th scope='col'>Commento</th>
+                                        </tr>
+                                    </table>
                                 </div>
                                 <div class="tab-pane fade" id="list-professori" role="tabpanel" aria-labelledby="list-professori-l">
+                                    <table class='table' id='records_prof'>
+                                        <tr> 
+                                            <th scope='col'>Nome</th>
+                                            <th scope='col'>Materia</th>
+                                            <th scope='col'>Aula</th>
+                                        </tr>
+                                    </table>
                                 </div>
                                 <div class="tab-pane fade" id="list-materia" role="tabpanel" aria-labelledby="list-materia-l">
+                                    <table class='table' id='records_materia'>
+                                        <tr>
+                                            <th scope='col'>Materia</th>
+                                            <th scope='col'>Voto</th>
+                                        </tr>
+                                    </table>
                                 </div>
                                 <div class="tab-pane fade" id="list-voti" role="tabpanel" aria-labelledby="list-voti-l">
+                                    <table class='table' id='records_voti'>
+                                        <tr>
+                                            <th scope='col'>Materia</th>
+                                            <th scope='col'>Voto</th>
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
                         </div>
