@@ -11,140 +11,169 @@ $(document).ready(function(){
             });
 
         ajaxRequest.done(function(return_data){
+
             if(return_data.success){
 
                 var trHTML = '';
 
-                switch(input)
-                {
-                    case 'list-tutto-l':
-                        trHTML = "";
-                        $.each(return_data.data, function (i, item) {
+                $.each(return_data.data, function (i, item)
+                {   
+                    /* nuovo  metodo */
+                    for(var j = 0; j < item.length; j++)
+                    {
+                        if(j==0)
+                            trHTML += '<tr><td>' + item[j];
+                        else if (j==item.length-1)
+                            trHTML += '</td><td>' + item[j] + '</td></tr>';
+                        else
+                            trHTML += '</td><td>' + item[j];
+                    }
+                });
 
-                            /* nuovo  metodo */
-                            for(var j = 0; j <= 5; j++)
-                            {
-                                if(j==0)
-                                    trHTML += '<tr><td>' + item[j];
-                                else if (j==5)
-                                    trHTML += '</td><td>' + item[j] + '</td></tr>';
-                                else
-                                    trHTML += '</td><td>' + item[j];
-                            }
-                            /* vecchio metodo
+                    switch(input)
+                    {
+                        case 'list-tutto-l':
+                            $('#records_tutto td').remove();
+                            $('#records_tutto').append(trHTML);
+                        break;
+                        case 'list-professori-l':
+                            $("#records_prof td").remove();
+                            $('#records_prof').append(trHTML);
+                        break;
+                        case 'list-materia-l':
+                            $("#records_materia td").remove();
+                            $('#records_materia').append(trHTML);
+                        break;
+                        case 'list-voti-l':
+                            $("#records_voti td").remove();
+                            $('#records_voti').append(trHTML);
+                        break;
+                        case 'list-dati-l':
+                            $("#records_dati td").remove();
+                            $('#records_dati').append(trHTML);
+                        break;
+                        default:
+                            alert("Errore richiesta !");
+                        break;
+                    }
+                /*
+                 switch(input)
+                {
+                    case 0:
+                        trHTML = "<table class='table' id='records_tutto'>"
+                                    + "<tr>" 
+                                        + "<th scope='col'>Materia</th>"
+                                        + "<th scope='col'>Professore</th>"
+                                        + "<th scope='col'>Aula</th>"
+                                        + "<th scope='col'>Data</th>"
+                                        + "<th scope='col'>Voto</th>"
+                                        + "<th scope='col'>Commento</th>"
+                                    + "</tr>";
+                        $.each(return_data.data, function (i, item) {
                             trHTML += '<tr><td>' + item[0]
                                 + '</td><td>' + item[1]
                                 + '</td><td>' + item[2]
                                 + '</td><td>' + item[3]
                                 + '</td><td>' + item[4]
-                                + '</td><td>' + item[5] + '</td></tr>';*/
+                                + '</td><td>' + item[5] + '</td></tr>';
                         });
-                        $('#records_tutto td').remove();
-                        $('#records_tutto').append(trHTML);
+                        trHTML += "</table>";
+                        $('#records_tutto').remove();
+                        $('#list-tutto').append(trHTML);
                     break;
 
-                    case 'list-professori-l':
-                        trHTML = "";
-                        $.each(return_data.data, function (i, item) {
-
-                            /* nuovo  metodo */
-                            for(var j = 0; j <= 2; j++)
-                            {
-                                if(j==0)
-                                    trHTML += '<tr><td>' + item[j];
-                                else if (j==2)
-                                    trHTML += '</td><td>' + item[j] + '</td></tr>';
-                                else
-                                    trHTML += '</td><td>' + item[j];
-                            }
-                            /*                         
+                    case 1:
+                        trHTML = "<table class='table' id='records_prof'>"
+                                    + "<tr>" 
+                                        + "<th scope='col'>Nome</th>"
+                                        + "<th scope='col'>Materia</th>"
+                                        + "<th scope='col'>Aula</th>"
+                                    + "</tr>"; 
+                        $.each(return_data.data, function (i, item) {                            
                             trHTML += '<tr><td>' + item[0]
                                 + '</td><td>' + item[1]
-                                + '</td><td>' + item[2] + '</td></tr>';*/
+                                + '</td><td>' + item[2] + '</td></tr>';
                         });
-                        $("#records_prof td").remove();
-                        $('#records_prof').append(trHTML);
+                        trHTML += "</table>";
+                        $("#records_prof").remove();
+                        $('#list-professori').append(trHTML);
                     break;
 
-                    case 'list-materia-l':
-                        trHTML = "";
+                    case 2:
+                        trHTML = "<table class='table' id='records_materia'>"
+                                    + "<tr>" 
+                                        + "<th scope='col'>Materia</th>"
+                                        + "<th scope='col'>Voto</th>"
+                                    + "</tr>"; 
                         $.each(return_data.data, function (i, item) {
-                            /* nuovo  metodo */
-                            for(var j = 0; j <= 1; j++)
-                            {
-                                if(j==0)
-                                    trHTML += '<tr><td>' + item[j];
-                                else if (j==1)
-                                    trHTML += '</td><td>' + item[j] + '</td></tr>';
-                                else
-                                    trHTML += '</td><td>' + item[j];
-                            }
-                            /* vecchio metodo
                             trHTML += '<tr><td>' + item[0]
-                                + '</td><td>' + item[1] + '</td></tr>';*/
+                                + '</td><td>' + item[1] + '</td></tr>';
                         });
-                        $("#records_materia td").remove();
-                        $('#records_materia').append(trHTML);
+                        trHTML += "</table>";
+                        $("#records_materia").remove();
+                        $('#list-materia').append(trHTML);
                     break;
 
-                    case 'list-voti-l':
-                        trHTML = ""; 
+                    case 3:
+                        trHTML = "<table class='table' id='records_voti'>"
+                                    + "<tr>" 
+                                        + "<th scope='col'>Materia</th>"
+                                        + "<th scope='col'>Voto</th>"
+                                    + "</tr>"; 
                         $.each(return_data.data, function (i, item) {
-                            /* nuovo  metodo */
-                            for(var j = 0; j <= 1; j++)
-                            {
-                                if(j==0)
-                                    trHTML += '<tr><td>' + item[j];
-                                else if (j==1)
-                                    trHTML += '</td><td>' + item[j] + '</td></tr>';
-                                else
-                                    trHTML += '</td><td>' + item[j];
-                            }
-                            /*  vecchio metodo
                             trHTML += '<tr><td>' + item[0]
-                                + '</td><td>' + item[1] + '</td></tr>';*/
+                                + '</td><td>' + item[1] + '</td></tr>';
                         });
-                        $("#records_voti td").remove();
-                        $('#records_voti').append(trHTML);
+                        trHTML += "</table>";
+                        $("#records_voti").remove();
+                        $('#list-voti').append(trHTML);
                     break;
 
-                    case 'list-dati-l':
-                        trHTML = "";
+                    case 4:
+                        trHTML = "<table class='table' id='records_dati'>"
+                                        + "<tr>" 
+                                            + "<th scope='col'>Username</th>" 
+                                            + "<th scope='col'>Nome</th>" 
+                                            + "<th scope='col'>Cognome</th>"
+                                            + "<th scope='col'>Data di nascita</th>"
+                                            + "<th scope='col'>Indirizzo</th>"
+                                            + "<th scope='col'>Citta'</th>"
+                                            + "<th scope='col'>Paese</th>"
+                                            + "<th scope='col'>Telefono</th>"
+                                            + "<th scope='col'>E-mail</th>"
+                                        + "</tr>";
                         $.each(return_data.data, function (i, item) {
-                            /* nuovo metodo */
-                            for(var j = 0; j <= 8; j++)
-                            {
-                                if(j==0)
-                                    trHTML += '<tr><td>' + item[j];
-                                else if (j==8)
-                                    trHTML += '</td><td>' + item[j] + '</td></tr>';
-                                else
-                                    trHTML += '</td><td>' + item[j];
-                            }                            
-                            /* vecchio metodo
-                            trHTML += '<tr><td>' + item[0] + '</td><td>' + item[1] + '</td><td>' + item[2] + '</td><td>' + item[3]
-                                   + '</td><td>' + item[4] + '</td><td>' + item[5] + '</td><td>' + item[6] + '</td><td>' + item[7]
-                                   + '</td><td>' + item[8] + '</td></tr>'; */
+                            trHTML += '<tr><td>' + item[0]
+                                + '</td><td>' + item[1]
+                                + '</td><td>' + item[2]
+                                + '</td><td>' + item[3]
+                                + '</td><td>' + item[4]
+                                + '</td><td>' + item[5]
+                                + '</td><td>' + item[6]
+                                + '</td><td>' + item[7]
+                                + '</td><td>' + item[8] 
+                                + '</td></tr>';
                         });
-                        $("#records_dati td").remove();
-                        $('#records_dati').append(trHTML);
+                        trHTML += "</table>";
+                        $("#records_dati").remove();
+                        $('#list-dati').append(trHTML);
                     break;
 
                     default:
                         alert("Errore richiesta !");
-                    break;
-                }
+                    break; */
+
             }
-            else{
+            else
+            {
                 alert(return_data.posted);
             }
         });
 
-        ajaxRequest.fail(function(return_data){
+        ajaxRequest.fail(function(){
             alert("Errore con il server, riprovare!");
         });
-    
-    }
+    };
 
         /* upgrade function */
     $(".iterabili").each(function() {
