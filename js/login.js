@@ -12,9 +12,9 @@ $(document).ready(function () {
         if (input.trim().match(/^([a-zA-Z0-9_\-\.\s]+)$/) == null || input.trim().length <= 5) {
             return false;
         }
-
         return true;
     }
+    
     /* valida mail*/
     function validateMail(input) {
         if (input.trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {

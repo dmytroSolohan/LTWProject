@@ -165,7 +165,7 @@
 
   .container-sm h1>span, .container-sm p>span {
     background-color: yellow;
-    line-height: 2
+    line-height: 2;
   }
 
   @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");

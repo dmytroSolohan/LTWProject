@@ -13,7 +13,7 @@ $(document).ready(function () {
     }
 
     function validateVoto(input) {
-        if (input.trim() != null || isNaN(input.trim()))
+        if (!isNaN(input.trim()) && input.trim() >= 1 && input.trim() <= 31)
             return true;
         return false;
     }

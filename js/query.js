@@ -56,7 +56,7 @@ $(document).ready(function(){
                             alert("Errore richiesta !");
                         break;
                     }
-                /*
+                /* vecchio metodo
                  switch(input)
                 {
                     case 0:
@@ -179,7 +179,6 @@ $(document).ready(function(){
     $(".iterabili").each(function() {
         $($(this).attr('id')).click( set($(this).attr('id')));
     });
-
 
     /* vecchio modo uguale a quello sopra sostituito da 1 riga
     $('#list-tutto-l').click(function(event){
