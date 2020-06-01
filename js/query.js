@@ -175,12 +175,11 @@ $(document).ready(function(){
         });
     };
 
-        /* upgrade function */
+
     $(".iterabili").each(function() {
         $($(this).attr('id')).click( set($(this).attr('id')));
     });
 
-    /* vecchio modo uguale a quello sopra sostituito da 1 riga
     $('#list-tutto-l').click(function(event){
         event.preventDefault();
         set('list-tutto-l');
@@ -188,23 +187,22 @@ $(document).ready(function(){
 
     $('#list-professori-l').click(function(event){
         event.preventDefault();
-        set('list-professori-l);
+        set('list-professori-l');
     });
 
     $('#list-materia-l').click(function(event){
         event.preventDefault();
-        set('list-materia-l);
+        set('list-materia-l');
     });
 
     $('#list-voti-l').click(function(event){
         event.preventDefault();
-        set('list-voti-l);
+        set('list-voti-l');
     });
 
     $('#list-dati-l').click(function(event){
         event.preventDefault();
         set('list-dati-l');
     });
-    */
 
 });
