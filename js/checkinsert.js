@@ -1,4 +1,9 @@
 
+ function checkUserId() {
+    if(sessionStorage.getItem("userId") === null || sessionStorage.length < 1)
+      window.location.replace("../log-in.html");
+  };
+  
 $(document).ready(function () {
 
     function validateName(input) {
@@ -8,7 +13,7 @@ $(document).ready(function () {
     }
 
     function validateVoto(input) {
-        if (input.trim() != null || isNaN(input.trim()))
+        if (!isNaN(input.trim()) && input.trim() >= 1 && input.trim() <= 31)
             return true;
         return false;
     }

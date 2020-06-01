@@ -16,19 +16,19 @@
         //questa va poi modificata con il db appartenente
         switch($num)
         {
-            case '0':
+            case 'list-tutto-l':
                 $sql = "SELECT * FROM NOTE WHERE FK_stud = ? ORDER BY data;";
             break;
-            case '1':
+            case 'list-professori-l':
                 $sql = "SELECT nome_prof, materia, aula FROM NOTE WHERE FK_stud = ?;";
             break;
-            case '2':
+            case 'list-materia-l':
                 $sql = "SELECT materia, voto FROM NOTE WHERE FK_stud = ? ORDER BY materia;";
             break;
-            case '3':
+            case 'list-voti-l':
                 $sql = "SELECT materia, voto FROM NOTE WHERE FK_stud = ? ORDER BY voto desc;";
             break;
-            case '4':
+            case 'list-dati-l':
                 $sql = "SELECT * FROM UTENTE WHERE ID = ?;";
             break;
         }
@@ -45,7 +45,7 @@
             $result = mysqli_stmt_get_result($stmt);
             switch($num)
                 {
-                    case '0':
+                    case 'list-tutto-l':
                     while($riga = mysqli_fetch_assoc($result))
                     {
                         $row = array();
@@ -62,7 +62,7 @@
                         array_push($data, $row);
                     }
                     break;
-                    case '1':
+                    case 'list-professori-l':
                         while($riga = mysqli_fetch_assoc($result))
                     {
                         $row = array();
@@ -74,7 +74,7 @@
                         array_push($data, $row);    
                     }
                     break;
-                    case '2':
+                    case 'list-materia-l':
                         while($riga = mysqli_fetch_assoc($result))
                         {
                             $row = array();
@@ -88,7 +88,7 @@
                             array_push($data, $row);    
                         }
                     break;
-                    case '3':
+                    case 'list-voti-l':
                         while($riga = mysqli_fetch_assoc($result))
                     {
                         $row = array();
@@ -102,7 +102,7 @@
                         array_push($data, $row);    
                     }
                     break;
-                    case '4':
+                    case 'list-dati-l':
                         while($riga = mysqli_fetch_assoc($result))
                     {
                         $row = array();

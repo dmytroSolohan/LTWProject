@@ -11,11 +11,53 @@ $(document).ready(function(){
             });
 
         ajaxRequest.done(function(return_data){
+
             if(return_data.success){
 
                 var trHTML = '';
 
-                switch(input)
+                $.each(return_data.data, function (i, item)
+                {   
+                    /* nuovo  metodo */
+                    for(var j = 0; j < item.length; j++)
+                    {
+                        if(j==0)
+                            trHTML += '<tr><td>' + item[j];
+                        else if (j==item.length-1)
+                            trHTML += '</td><td>' + item[j] + '</td></tr>';
+                        else
+                            trHTML += '</td><td>' + item[j];
+                    }
+                });
+
+                    switch(input)
+                    {
+                        case 'list-tutto-l':
+                            $('#records_tutto td').remove();
+                            $('#records_tutto').append(trHTML);
+                        break;
+                        case 'list-professori-l':
+                            $("#records_prof td").remove();
+                            $('#records_prof').append(trHTML);
+                        break;
+                        case 'list-materia-l':
+                            $("#records_materia td").remove();
+                            $('#records_materia').append(trHTML);
+                        break;
+                        case 'list-voti-l':
+                            $("#records_voti td").remove();
+                            $('#records_voti').append(trHTML);
+                        break;
+                        case 'list-dati-l':
+                            $("#records_dati td").remove();
+                            $('#records_dati').append(trHTML);
+                        break;
+                        default:
+                            alert("Errore richiesta !");
+                        break;
+                    }
+                /* vecchio metodo
+                 switch(input)
                 {
                     case 0:
                         trHTML = "<table class='table' id='records_tutto'>"
@@ -119,43 +161,48 @@ $(document).ready(function(){
 
                     default:
                         alert("Errore richiesta !");
-                    break;
-                }
+                    break; */
+
             }
-            else{
+            else
+            {
                 alert(return_data.posted);
             }
         });
 
-        ajaxRequest.fail(function(return_data){
+        ajaxRequest.fail(function(){
             alert("Errore con il server, riprovare!");
         });
-    
-    }
+    };
+
+
+    $(".iterabili").each(function() {
+        $($(this).attr('id')).click( set($(this).attr('id')));
+    });
 
     $('#list-tutto-l').click(function(event){
         event.preventDefault();
-        set(0);
+        set('list-tutto-l');
     });
 
     $('#list-professori-l').click(function(event){
         event.preventDefault();
-        set(1);
+        set('list-professori-l');
     });
 
     $('#list-materia-l').click(function(event){
         event.preventDefault();
-        set(2);
+        set('list-materia-l');
     });
 
     $('#list-voti-l').click(function(event){
         event.preventDefault();
-        set(3);
+        set('list-voti-l');
     });
 
     $('#list-dati-l').click(function(event){
         event.preventDefault();
-        set(4);
+        set('list-dati-l');
     });
 
 });
